@@ -11,7 +11,7 @@ Berikut tata cara pengumpulan tugas praktikum di repositori ini.
 > **Note:** Pastikan kalian sudah menginstall dan login pada git.
 1. Pada halaman repositori ini, klik tombol **Fork** di kanan atas lalu **Create New Fork**.
 
-   <img src="https://github.com/user-attachments/assets/eb63165d-ce77-4f63-a021-5be7e5be0013" alt="tutor-1" width="400">
+   <img src="https://github.com/user-attachments/assets/5e1f73b0-8ea6-4b67-9b33-661e26371eed" alt="tutor-1" width="400">
 
 2. Clone repositori yang telah difork ke dalam device kalian.
    ```bash
