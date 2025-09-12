@@ -102,7 +102,7 @@ Gunakan format yang konsisten untuk pesan commit:
 
 **Contoh:**
 ```bash
-git commit -m "feat: menambahkan Praktikum-1 H071221001"
+git commit -m "feat: menambahkan Praktikum-1 H071231009"
 ```
 
 ## Catatan Tambahan
@@ -116,4 +116,4 @@ git commit -m "feat: menambahkan Praktikum-1 H071221001"
 
 ---
 
-**-LAB WEB 11 2024-**
+**-LAB WEB 10 2025-**
