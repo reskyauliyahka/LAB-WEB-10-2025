@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Saya - Kontak</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header class="navigasi">
+        <div class="logo">
+            <h1>Kisanak</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="contact-info-section">
+            <h2 style="text-align: center; margin-top: 40px;">Informasi Kontak</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Email</th>
+                            <th>Nomor Telepon</th>
+                            <th>LinkedIn</th>
+                            <th>Instagram</th>
+                            <th>GitHub</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>muhammadhairiinidummy@email.com</td>
+                            <td>+62 812-3456-7890</td>
+                            <td class="contact-account"><a href="https://linkedin.com" target="_blank">hairi</a></td>
+                            <td class="contact-account"><a href="https://instagram.com" target="_blank">hairi</a></td>
+                            <td class="contact-account" ><a href="https://github.com" target="_blank">hairi</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="contact-form-section">
+            <h2 class="title-form">Kirim Pesan</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Nama:</label>
+                    <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Nomor Telepon:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Masukkan nomor telepon Anda" required>
+                </div>
+                <div class="form-group message-type">
+                    <label>Tipe Pesan:</label>
+                    <div>
+                        <input type="radio" id="pertanyaan" name="message_type" value="pertanyaan" required>
+                        <label for="pertanyaan">Pertanyaan</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="kritik" name="message_type" value="kritik">
+                        <label for="kritik">Kritik</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="saran" name="message_type" value="saran">
+                        <label for="saran">Saran</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="kerjasama" name="message_type" value="kerjasama">
+                        <label for="kerjasama">Kerjasama</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Pesan Detail:</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Tulis pesan Anda di sini" required></textarea>
+                </div>
+                <div class="form-group agreement-checkbox">
+                    <input type="checkbox" id="agreement" name="agreement" required>
+                    <label for="agreement">Saya setuju data saya dikumpulkan dan diproses sesuai kebijakan privasi.</label>
+                </div>
+                <button type="submit">Kirim Pesan</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-media">
+            <a href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://github.com"><i class="fa-brands fa-github"></i></a>
+            <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <div class="footer-bottom">
+            <p>Hak Cipta &copy; 2025</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,280 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.logo {
+    color: #EF7722;
+    font-family: "Bitcount Grid Double", system-ui;
+    margin-left: 20px;
+}
+
+.navigasi {
+    background-color: rgb(38, 37, 37);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+main {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: white;
+    padding-right: 20px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: rgb(238, 238, 238);
+    text-decoration: underline;
+}
+
+h2, h3 {
+    color: #333;
+    font-weight: 600;
+}
+
+/* === Gaya untuk Tabel === */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    letter-spacing: 1px;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Wrapper untuk membuat tabel bisa di-scroll */
+.table-wrapper {
+    overflow-x: auto;
+    margin: 20px auto;
+    width: 90%;
+}
+
+/* === Gaya untuk index.html === */
+.hero-section {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.hero-section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    width: 150px;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.hero-section img:hover {
+    transform: scale(1.05);
+}
+
+.hero-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+.hero-section p {
+    font-style: italic;
+    color: #666;
+}
+
+/* === Gaya untuk about.html === */
+#Personal-info-section, #bio-section, #education-section, #skill-section, #hobbies-section {
+    margin-top: 40px;
+}
+
+#bio-section .deskripsi {
+    text-align: justify;
+    line-height: 1.6;
+    margin: 15px auto;
+    max-width: 80%;
+}
+
+#education-section dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+#education-section dt {
+    font-weight: bold;
+    color: #EF7722;
+}
+
+#education-section dd {
+    margin: 0;
+    padding-left: 10px;
+}
+
+#skill-section ul, #hobbies-section ol {
+    margin: 20px auto;
+    width: fit-content;
+    text-align: left;
+    padding-left: 20px;
+}
+
+/* === Gaya untuk contact.html === */
+#contact-form-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: white;
+}
+
+.form-group.message-type label,
+.form-group.agreement-checkbox label {
+    font-weight: normal;
+    display: inline-block;
+}
+
+.form-group.message-type div {
+    margin-bottom: 5px;
+}
+
+#contact-form button {
+    width: 100%;
+    padding: 15px;
+    background-color: #EF7722;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.title-form{
+    text-align: center;
+    margin-top: 40px;
+}
+
+#contact-form button:hover {
+    background-color: #d86a1e;
+}
+
+/* === Gaya untuk Footer === */
+footer {
+    position: relative;
+    text-align: center;
+    background-color: rgb(38, 37, 37);
+    color: white;
+    padding: 20px 0;
+    margin-top: auto;
+    width: 100%;
+}
+
+.social-media a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin: 0 10px;
+}
+
+.social-media a:hover {
+    color: #EF7722;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+}
+
+.contact-account a{
+    text-decoration: none;
+    color: black;
+}
+
+/* === Media Queries untuk Responsif === */
+@media (max-width: 768px) {
+    .navigasi {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .logo {
+        margin: 0 auto;
+    }
+
+    .hero-section img {
+        width: 120px;
+    }
+}
