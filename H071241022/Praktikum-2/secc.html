@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smada SECC Landing Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-stone-50 text-gray-800 font-sans">
+
+  <!-- Navbar -->
+  <nav class="flex items-center justify-between px-6 py-4 bg-white shadow">
+    <div class="flex items-center space-x-2">
+      <img src="assets/WhatsApp Image 2025-09-24 at 21.41.43_dc3b6a6c.jpg" alt="Logo" class="w-10 h-10">
+      <span class="text-xl font-semibold italic">Smada English Conversation Club</span>
+    </div>
+    <div class="space-x-6 hidden md:flex">
+      <a href="#home" class="hover:text-blue-200">Home</a>
+      <a href="#about" class="hover:text-blue-200">About</a>
+      <a href="#features" class="hover:text-blue-200">Activity</a>
+      <a href="#contact" class="hover:text-blue-200">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+<header id="home" class="relative min-h-screen flex items-center justify-center text-center">
+  <!-- Background image with overlay -->
+  <div class="absolute inset-0">
+    <img src="assets/WhatsApp Image 2025-09-24 at 21.52.24_4f82e5ca.jpg" 
+         alt="Hero Background" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-3xl mx-auto">
+    <h1 class="text-5xl font-bold italic mb-4 text-white">
+      Welcome to <span class="text-blue-200">SECC</span>
+    </h1>
+    <p class="text-xl text-gray-200 mb-6">
+      Conquer the world with us!
+    </p>
+    <a href="#about" 
+       class="px-8 py-4 bg-blue-200 text-gray-800 rounded-lg hover:bg-blue-300 transition font-medium">
+      Learn more
+    </a>
+  </div>
+</header>
+
+
+  <!-- About Section -->
+  <section id="about" class="py-16 px-6 bg-white">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-3xl font-semibold italic mb-4">About Us</h2>
+      <p class="text-gray-600 font-medium mb-12">
+        Smada English Conversation Club (SECC) is a student organization dedicated to nurturing 
+        interest, skills, and confidence in English. We encourage our members to step out, compete, 
+        and grow through various opportunities. Within SECC, we have four divisions — Speech, Debate,
+        Art, and Broadcast — each providing a space to explore talents and sharpen abilities in their
+        own unique way.
+      </p>
+
+      <!-- Divisions Grid -->
+      <div class="grid gap-8 md:grid-cols-4">
+        <div class="p-6 bg-stone-50 rounded-lg shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold text-blue-400 mb-2">Speech</h3>
+          <p class="text-gray-600 text-sm">
+            A place to practice public speaking, storytelling, and delivering powerful
+            messages with confidence.
+          </p>
+        </div>
+        <div class="p-6 bg-stone-50 rounded-lg shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold text-blue-400 mb-2">Debate</h3>
+          <p class="text-gray-600 text-sm">
+            Training critical thinking and argumentation skills through discussions and competitions.
+          </p>
+        </div>
+        <div class="p-6 bg-stone-50 rounded-lg shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold text-blue-400 mb-2">Art</h3>
+          <p class="text-gray-600 text-sm">
+            Channeling creativity through design, performances, and various artistic expressions.
+          </p>
+        </div>
+        <div class="p-6 bg-stone-50 rounded-lg shadow hover:shadow-lg">
+          <h3 class="text-xl font-semibold text-blue-400 mb-2">Broadcast</h3>
+          <p class="text-gray-600 text-sm">
+            Developing skills in news presenting and delivering information clearly, 
+            just like a professional announcer.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- activities Grid -->
+<section id="features" class="py-8 px-6 bg-white">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl font-semibold italic mb-12">Our Activities!</h2>
+    <div class="grid gap-8 md:grid-cols-3">
+      
+      <!-- Card 1 -->
+      <div class="p-6 bg-stone-50 rounded-lg shadow hover:shadow-lg transition">
+        <img src="assets/WhatsApp Image 2025-09-24 at 22.22.55_c1031702.jpg" alt="Event" class="w-full h-40 object-cover rounded-md mb-4">
+        <h3 class="text-xl font-semibold text-blue-400 mb-2">SECON</h3>
+        <p class="text-gray-700">Yearly event to hold an english competition</p>
+      </div>
+      
+      <!-- Card 2 -->
+      <div class="p-6 bg-stone-50 rounded-lg shadow hover:shadow-lg transition">
+        <img src="assets/WhatsApp Image 2025-09-24 at 22.28.18_b09a2a99.jpg" alt="Self Development" class="w-full h-40 object-cover rounded-md mb-4">
+        <h3 class="text-xl font-semibold text-blue-400 mb-2">Division Training</h3>
+        <p class="text-gray-700">Division training done monthly to help members with their skill</p>
+      </div>
+      
+      <!-- Card 3 -->
+      <div class="p-6 bg-stone-50 rounded-lg shadow hover:shadow-lg transition">
+        <img src="assets/WhatsApp Image 2025-09-24 at 22.31.27_c0c2fc34.jpg" alt="Community" class="w-full h-40 object-cover rounded-md mb-4">
+        <h3 class="text-xl font-semibold text-blue-400 mb-2">SECC Holiday</h3>
+        <p class="text-gray-700">Holidays for the secc members to bond </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 px-6">
+    <div class="max-w-xl mx-auto text-center">
+      <h2 class="text-3xl font-semibold italic mb-6">Contact us for more!</h2>
+      <form class="space-y-4">
+        <input type="text" placeholder="Nama" class="w-full p-3 border border-gray-300 rounded-lg">
+        <input type="email" placeholder="Email" class="w-full p-3 border border-gray-300 rounded-lg">
+        <textarea placeholder="Pesan" rows="4" class="w-full p-3 border border-gray-300 rounded-lg"></textarea>
+        <button type="submit" class="w-1/2 py-3 bg-blue-200 text-gray-800 rounded-lg hover:bg-blue-300 transition font-semibold">
+          Kirim
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white text-center py-6 mt-10 border-t">
+    <p class="text-gray-600">&copy; 2024 SECC Smada. All rights reserved.</p>
+    <div class="mt-2 space-x-4">
+      <a href="https://www.instagram.com/secc02/" target="_blank" class="text-blue-200 hover:text-blue-300">Instagram</a>
+    </div>
+  </footer>
+</body>
+</html>
