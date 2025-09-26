@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toko Baju ku</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="bg-gray-800 text-white p-4 fixed w-full z-50">
+      <div
+        class="sm:flex justify-between items-center px-4 md:px-8 grid grid-cols-1"
+      >
+        <a href="#" class="text-xl font-bold text-center">Toko Pakaian Keren</a>
+        <ul class="grid grid-cols-1 gap-3 sm:flex sm:flex-row">
+          <li><a href="#beranda" class="hover:text-gray-400">Beranda</a></li>
+          <li><a href="#tentang" class="hover:text-gray-400">Tentang</a></li>
+          <li><a href="#layanan" class="hover:text-gray-400">Layanan</a></li>
+          <li><a href="#kontak" class="hover:text-gray-400">Kontak</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Header -->
+
+    <header class="pt-24 pb-12 text-center h-[500px] flex items-center ">
+      <div class="container mx-auto">
+        <h1 class="text-5xl font-bold text-gray-800 my-8">
+          Toko Pakaian Keren
+        </h1>
+        <p class="text-lg text-gray-600">
+          Gaya yang Unik untuk Dirimu yang Berbeda
+        </p>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+
+    <section class="bg-gray-100 text-center py-20 " id="beranda">
+      <div class="container mx-auto">
+        <h1 class="text-4xl font-bold mb-4">Temukan Gaya Terbaikmu</h1>
+        <p class="text-lg text-gray-600 mb-8">
+          Koleksi pakaian berkualitas untuk setiap momen.
+        </p>
+        <a
+          href="#produk"
+          class="bg-blue-500 text-white font-semibold py-2 px-6 rounded-full hover:bg-blue-600"
+          >Lihat Produk</a
+        >
+      </div>
+    </section >
+
+    <!-- Tentang -->
+
+    <section id="tentang" class="py-20 bg-white">
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">Tentang Kami</h2>
+        <p class="text-gray-700 max-w-2xl mx-auto">
+          Kami menyediakan berbagai pilihan pakaian trendi dan nyaman untuk pria
+          dan wanita. Kami percaya bahwa fashion adalah cara untuk
+          mengekspresikan diri, dan kami di sini untuk membantu Anda menemukan
+          gaya yang sempurna. Semua produk kami dibuat dengan bahan berkualitas
+          tinggi dan perhatian terhadap detail.
+        </p>
+      </div>
+    </section>
+
+    <!-- Manfaat -->
+
+    <section class="py-20 bg-gray-200" id="layanan">
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-10">Kenapa Memilih Kami?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold mb-2">Bahan Berkualitas</h3>
+            <p class="text-gray-600">
+              Pakaian kami dibuat dari bahan pilihan yang nyaman dan tahan lama.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold mb-2">Desain Unik</h3>
+            <p class="text-gray-600">
+              Koleksi kami memiliki desain yang orisinal dan mengikuti tren
+              terkini.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold mb-2">Harga Terjangkau</h3>
+            <p class="text-gray-600">
+              Fashion berkualitas tidak harus mahal. Kami menawarkannya dengan
+              harga terbaik.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontak -->
+
+    <section id="kontak" class="py-20 bg-blue-200">
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">Dapatkan Info Terbaru</h2>
+        <p class="text-gray-600 mb-8">
+          Daftarkan email Anda untuk mendapatkan diskon dan koleksi eksklusif.
+        </p>
+        <div
+          class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 max-w-2xl mx-auto px-4"
+        >
+          <input
+            type="email"
+            name="email"
+            placeholder="Email Anda"
+            id="email-user"
+            class="w-full sm:w-auto flex-grow bg-white p-3 rounded"
+          />
+          <input
+            type="text"
+            placeholder="First name"
+            id="first-name"
+            class="w-full sm:w-auto flex-grow bg-white p-3 rounded"
+          />
+          <input
+            type="text"
+            placeholder="Last name"
+            id="last-name"
+            class="w-full sm:w-auto flex-grow bg-white p-3 rounded"
+          />
+          <button
+            class="w-full sm:w-auto bg-blue-500 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-600"
+          >
+            Daftar
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+
+    <footer class="bg-gray-800 text-white py-8">
+      <div class="container mx-auto text-center">
+        <p>&copy; 2025 Toko Pakaian Keren. Hak Cipta Dilindungi.</p>
+        <div class="mt-4 space-x-4">
+          <a href="#" class="hover:text-gray-400"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+          <a href="#" class="hover:text-gray-400"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="#" class="hover:text-gray-400"
+            ><i class="fa-brands fa-twitter"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
