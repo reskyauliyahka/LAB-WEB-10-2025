@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+.card[data-color="red"] { @apply bg-red-500; }
+.card[data-color="green"] { @apply bg-green-500; }
+.card[data-color="blue"] { @apply bg-blue-500; }
+.card[data-color="yellow"] { @apply bg-yellow-400; }
+.card[data-color="black"] { @apply bg-gray-800 text-white; }
+.bot-card-back { @apply bg-gray-700; }
+.color-choice[data-color="red"] { @apply bg-red-500; }
+.color-choice[data-color="green"] { @apply bg-green-500; }
+.color-choice[data-color="blue"] { @apply bg-blue-500; }
+.color-choice[data-color="yellow"] { @apply bg-yellow-400; }

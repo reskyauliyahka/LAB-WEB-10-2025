@@ -53,7 +53,7 @@ function hitungHari(hari) {
 
         console.log("\n================ HASIL ================");
         console.log(
-          `sasada${jumlahHari} hari setelah hari ${hariAwalTampil} adalah hari ${hariAkhirTampil}.`
+          `${jumlahHari} hari setelah hari ${hariAwalTampil} adalah hari ${hariAkhirTampil}.`
         );
         console.log("========================================");
         rl.close();
