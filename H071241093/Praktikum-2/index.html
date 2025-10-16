@@ -1,0 +1,359 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="src/output.css" />
+        <script
+        defer
+        src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+        ></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <header class="fixed top-0 left-0 w-full z-50">
+        <nav class="bg-white shadow-md">
+            <div
+            class="text-gray-700 container mx-auto px-6 md:px-24 py-4 flex justify-between items-center tracking-wider"
+            >
+            <a class=" font-bold text-xl" ref="#">SULAWESI 
+                <img class="w-8 h-auto inline-block" src="assets/lokasi.png" alt="">
+                SELATAN</a>
+            <ul class="hidden md:flex items-center space-x-4">
+                <li>
+                <a
+                    href="#"
+                    class="px-4 py-2 text-gray-600 focus:border-b-2 focus:border-blue-500 focus:pb-1 hover:text-blue-500 font-semibold transition"
+                >
+                    Home
+                </a>
+                </li>
+                <li>
+                <a
+                    href="#2"
+                    class="px-4 py-2 text text-gray-600 focus:border-b-2 focus:border-blue-500 focus:pb-1 hover:text-blue-500 font-semibold transition"
+                >
+                    Detail Wisata
+                </a>
+                </li>
+
+                <li class="group relative">
+                <a
+                    href="#"
+                    class="inline-block px-4 py-2 text-gray-600 focus:border-b-2 focus:border-blue-500 focus:pb-1 hover:text-blue-500 font-semibold transition"
+                >
+                    Login
+                    <img class="w-6 h-auto inline-block" src="assets/login.png" alt="login logo">
+                </a>
+                <ul
+                    class="hidden absolute right-0 top-14 min-w-56 bg-white border border-sky-300 rounded-sm shadow-lg group-hover:block z-10 "
+                >
+                <li class="justify-between-between flex items-center">
+                    <a
+                    href="#"
+                    class="block w-full px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                    Akun
+                </a>
+                <img class="w-6 h-auto inline-block pr-2" src="assets/codicon--account (1).png" alt="logo akun">
+            </li>
+            <li class="justify-between-between flex items-center">
+                <a
+                href="#"
+                class="block w-full px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
+                >
+                Riwayat
+            </a>
+            <img class="w-6 h-auto inline-block pr-2" src="assets/riwayat.png" alt="logo akun">
+        </li>
+            <li class="justify-between-between flex items-center">
+                <a
+                href="#"
+                class="block w-full px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
+                >
+                Bantuan
+            </a>
+            <img class="w-6 h-auto inline-block pr-2" src="assets/bantuan.png" alt="logo akun">
+        </li>
+        </li>
+            <li class="justify-between-between flex items-center">
+                <a
+                href="#"
+                class="block w-full px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
+                >
+                saran
+            </a>
+            <img class="w-6 h-auto inline-block pr-2" src="assets/saran.png" alt="logo akun">
+        </li>
+        <li class="justify-between-between flex items-center">
+        <a
+            href="#"
+            class="block w-full px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
+            >
+            Setting
+        </a>
+        <img class="w-6 h-auto inline-block pr-2" src="assets/setting.png" alt="logo setting">
+        </li>
+                </ul>
+                </li>
+            </ul>
+            <button
+                id="toggle_menu_button"
+                class="md:hidden text-gray-800 hover:text-blue-500 focus:outline-none"
+            >
+                <svg
+                id="toggle_open"
+                class="w-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16m-7 6h7"
+                ></path>
+                </svg>
+                <svg
+                class="hidden w-6 h-6"
+                id="toggle_close"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-x-icon lucide-x"
+                >
+                <path d="M18 6 6 18" />
+                <path d="m6 6 12 12" />
+                </svg>
+            </button>
+            </div>
+            <div id="mobile_menu" class="hidden bg-white border-t border-gray-200">
+            <a href="#" class="block px-6 py-3 text-gray-600 hover:text-cyan-300"
+                >Home</a
+            >
+            <a href="#" class="block px-6 py-3 text-gray-600 hover:bg-gray-50"
+                >Detail Wisata</a
+            >
+            <a href="#" class="block px-6 py-3 text-gray-600 hover:bg-gray-50"
+                >Login</a
+            >
+            </div>
+        </nav>
+        </header>
+
+        <main class="mt-20 md:mt-38 mx-auto container px-6 md:px-24 py-4 mb-16">
+            <div class="  md:flex md:justify-between items-center mb-36">
+                <div class="font-sans md:max-w-xl">
+                    <h1 class="text-4xl md:text-5xl text-gray-800 font-semibold leading-normal">SUL - SEL <br>Surga di <span class="text-cyan-400 ">Tanah Timur</span></h1>
+                    <p><span class="text-gray-600">
+                        Dari puncak megah Tana Toraja hingga keindahan bawah laut Selayar yang memukau. Temukan petualangan tak terlupakan di tanah yang kaya akan budaya dan keajaiban alam. Perjalanan Anda dimulai di sini! </span></p>
+                        <div class="mt-10 ">
+                            <a class="bg-sky-400 border-sky-400 rounded-3xl py-2 px-6 sm:px-4 md:font-medium inline-block mr-4 text-gray-900 hover:bg-transparent hover:border-sky-500 hover:border duration-300 hover:text-sky-400 hover:text" href="#6">
+                                Rekomendasi Wisata
+                            </a>
+                            <a class="group py-2 px-6 sm:px-4 font-medium inline-block" href="#">
+                                Lebih Lanjut <span class="text-lg group-hover:-rotate-45 hover:rotate duration-400  inline-block">&#10148</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="border-gray-200 bg-sky-100 shadow-2xl rounded-2xl p-4 group">
+                        <div class=" relative rounded-2xl overflow-hidden">
+                            <img class="w-full md:w-96 rounded-2xl group-hover:blur-md" src="assets/bulkum.jpg" alt="">
+
+                                <div class="absolute top-0 left-0 w-full h-full flex justify-center items-center
+                                opacity-0 group-hover:opacity-100 duration-500">
+                                <span class="text-white text-xl font-bold tracking-wider font-serif text-center">Desa <br>Wisata Bulukumba</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="mt-16 md:flex md: justify-between" id="2">
+                    <div class="font-sans md:max-w-xl">
+                        <h1 class="text-2xl  text-gray-800 font-semibold leading-normal text-center"> Wisata Balla-Ballayya (Pesona Desa Adat Bira) <br><span class="text-cyan-400 "> Budaya dan Alam </span></h1> <br>
+                        <p class="text-justify"><span class="text-gray-600 ">
+                            Balla-Ballayya adalah sebuah kawasan wisata budaya menawan yang terletak di Desa Bira, Bulukumba, Sulawesi Selatan. Keunikan utamanya adalah deretan rumah panggung Bugis-Makassar dari kayu dengan ukiran otentik, yang menyajikan nuansa perkampungan tradisional di tengah keindahan alam pesisir Bira yang populer.
+
+                            Kawasan ini menjadi destinasi populer untuk berfoto berkat setiap sudutnya yang estetik, menggabungkan pesona bangunan bersejarah dengan pemandangan sekitar yang asri. Selain itu, Balla-Ballayya juga menjadi tempat wisata edukasi untuk mengenal kearifan lokal, sangat ideal dikunjungi pada pagi atau sore hari untuk menikmati suasana yang tenang.</span></p>
+                        </div>
+                        <div class="border-gray-300 border shadow-2xl bg-sky-100 rounded-2xl p-4">
+                                <iframe class="w-full h-full md:w-96 rounded-2xl" title="" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1369.9796947686998!2d120.46161424754037!3d-5.585558009890267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbbf5bc00af5fdb%3A0xfb683a92133ae9d5!2sWisata%20Balla-Ballayya%20Desa%20Bira!5e1!3m2!1sid!2sid!4v1758467665459!5m2!1sid!2sid" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                            </div>
+                        </div>
+                        <div class="mt-6 mb-19">
+                        <a class="bg-sky-100 border-gray-300 shadow-2xl border rounded-2xl  py-2 px-4 mb-3 md:font-medium inline-block mr-4 text-gray-700 hover:bg-transparent hover:border-sky-500 hover:border duration-300 hover:text-sky-400 hover:text" href="#">
+                            Harga tiket: Rp 20.000  
+                        </a>
+                        <a class="bg-sky-100 border-gray-300 border shadow-2xl rounded-2xl  py-2 px-4  md:font-medium inline-block mr-4 text-gray-700 hover:bg-transparent hover:border-sky-500 hover:border duration-300 hover:text-sky-400 hover:text" href="#5">
+                            Reservasi Sekarang  
+                        </a>
+                    </div>
+                    </div>
+
+                    <section class="font-sans mt-20" id="reservasi">
+                            <h1 id="5" class="text-2xl font-semibold mb-2 text-center">Form Pemesanan
+                            </h1>
+                            <div class="flex justify-center items-center">
+                                <div class="bg-sky-200 text-transparent w-36 h-1 mb-12"> c</div>
+                            </div>
+                        <div class="md:flex block justify-center items-center">
+                            <form action="  ">
+                                <div class="grid md:grid-cols-3  gap-x-4 gap-y-8 border-gray-300 rounded-md border shadow bg-white p-10">
+                                    <div class="shadow ">
+                                        <label for="nama" class="pl-1">Nama</label><br>
+                                        <input name="nama" class="bg-white border-gray-300 border shadow rounded-md w-full md:w-68 px-3 py-2 focus:outline-gray-400 focus:outline-1 " type="text" required placeholder="Moch. Syech Yusuf M">
+                                    </div>
+                                    <div class="shadow ">
+                                        <label for="Email" class="pl-1">Email</label><br>
+                                <input name="Email" class="bg-white border-gray-300 border shadow rounded-md w-full md:w-68 px-3 py-2 focus:outline-gray-400 focus:outline-1 " type="email" required placeholder="mochsyechyusufm@gmail.com">
+                            </div>
+                                <div class="shadow-2xs ">
+                                    <label for="HP" class="pl-1">Nomor HP</label><br>
+                                    <input name="HP" class="bg-white border-gray-300 border shadow-2xs rounded-md w-full md:w-68 px-3 py-2 focus:outline-gray-400 focus:outline-1 " type="tel" required placeholder="085342505228">
+                                </div>
+                                <div class="shadow ">
+                                    <label for="date" class="pl-1">Tanggal Kunjungan</label><br>
+                                    <input name="date" class="bg-white text-gray-400  border-gray-300 border shadow rounded-md w-full md:w-68 px-3 py-2 focus:outline-gray-400 focus:outline-1 " type="date" required>
+                                </div>
+                                <div class="shadow ">
+                                    <label for="Check-in" class="pl-1">Waktu Check-in</label><br>
+                                    <input name="Check-in" class=" bg-white border-gray-300 border shadow rounded-md w-full md:w-68 px-3 py-2 focus:outline-gray-400 focus:outline-1  " type="time" required>
+                                </div>
+                                <div class="shadow ">
+                                    <label for="Check-out" class="pl-1">Waktu Check-Out</label><br>
+                                    <input name="Check-out" class="bg-white border-gray-300 border shadow rounded-md w-full md:w-68 px-3 py-2  focus:outline-gray-400 focus:outline-1 " type="time" required>
+                                </div>
+                                <div class="md:col-span-3 md:flex block justify-between gap-2">
+                                        <p class="mb-2">Butuh bantuan cepat? Hubungi pihak wisata via <br> <span class="text-sky-500"><a href="https://web.whatsapp.com/+62%20853-4250-5228" target="_blank">Whatsapp.</a></span> 
+                                        </p>
+                                    <div>
+                                        <button type="submit" class="border-transparent bg-sky-400 rounded-md p-2 font-semibold hover:bg-sky-500 focus:outline-2 focus:outline-sky-500 focus:outline-offset-2 text-gray-800 ">
+                                            &#10148 Lanjutkan Pemesanan 
+                                        </button>
+                                        <button type="reset" class="bg-sky-400 font-semibold hover:bg-red-600 active:outline-2 active:outline-offset-2 active:outline-red-500  rounded-md p-2 text-gray-800">
+                                            Batal
+                                        </button>                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        </div>
+                    </section>
+
+                    <section class="font-sans">
+                        <div id="6" class="flex justify-center items-center mt-14">
+                            <a  class="font-semibold text-2xl text-gray-800 ">
+                                Rekomendasi Untuk Anda
+                            </a>
+                        </div>
+                        <p class="text-center font-semibold mb-14 text-gray-800">
+                            Paket Lainnya
+                        </p>
+
+                        <div class="md:flex block justify-center gap-8">
+                            
+                            <div class="bg-white shadow border-gray-300 border rounded-lg pb-4 mb-8">
+                                <img class="rounded-t-md w-full h-38" src="assets/malino.jpg" alt="">
+                                <h1 class="px-4 pt-2 font-semibold">Kota Malino</h1>
+                                <p class="px-4 text-justify w-full md:max-w-54 text-gray-500 line-clamp-3">terkenal sebagai "Kota Bunga" dengan udara sejuk dan pemandangan alam yang indah seperti perkebunan teh dan hutan pinus</p>
+                            </div>
+                            <div class="bg-white shadow border-gray-300 border rounded-lg pb-4 mb-8">
+                                <img class="rounded-t-md w-full h-38 " src="assets/bulkum.jpg" alt="">
+                                <h1 class="px-4 pt-2 font-semibold">
+                                    Desa Wisata Bulukumba
+                                </h1>
+                                <p class="px-4 text-justify w-full md:max-w-54 text-gray-500 line-clamp-3">terkenal sebagai "Kota Bunga" dengan udara sejuk dan pemandangan alam yang indah seperti perkebunan teh dan hutan pinus</p>
+                            </div>
+                            <div class="bg-white shadow border-gray-300 border rounded-lg pb-4 mb-8">
+                                <img class="rounded-t-md w-full h-38 " src="assets/bantingmurung.jpg" alt="">
+                                <h1 class="px-4 pt-2 font-semibold">Kota Malino</h1>
+                                <p class="px-4 text-justify w-full md:max-w-54 text-gray-500 line-clamp-3">terkenal sebagai "Kota Bunga" dengan udara sejuk dan pemandangan alam yang indah seperti perkebunan teh dan hutan pinus</p>
+                            </div>
+                            <div class="bg-white shadow border-gray-300 border rounded-lg pb-4 mb-8">
+                                <img class="rounded-t-md w-full h-38 " src="assets/lukisan.jpeg" alt="">
+                                <h1 class="px-4 pt-2 font-semibold">Kota Malino</h1>
+                                <p class="px-4 text-justify w-full md:max-w-54 text-gray-500 line-clamp-3">terkenal sebagai "Kota Bunga" dengan udara sejuk dan pemandangan alam yang indah seperti perkebunan teh dan hutan pinus</p>
+                            </div>
+                            
+                        </div>
+                    </section>
+
+            </main>
+
+        <footer class="md:px-28 md:flex block justify-center items-start gap-34 border-t-2 pt-3 border-gray-300 shadow">
+                    <div>
+                        <a class=" font-bold text-sm " ref="#">SULAWESI 
+                        <img class="w-8 h-auto inline-block" src="assets/lokasi.png" alt="">
+                        SELATAN</a>
+                        <p class="text-gray-600 text-sm text-justify max-w-68">
+                            Jelajahi keindahan Sulawesi Selatan dengan mudah. Temukan destinasi ikonik, paket wisata menarik, 
+                            dan akomodasi terbaik. Semua informasi liburan Anda ada di sini, praktis dan cepat.
+
+                        </p>
+                    </div>
+                    <div class="">
+                        <h1 class="font-semibold text-sm">JELAJAH</h1>
+                            <a href="#" class=""> 
+                                <img class="w-4 h-auto inline-block" src="assets/home.png" alt=""> HOME
+                            </a>
+                            <div>
+
+                                <a href="#" class=""> 
+                                    <img class="w-4 h-auto inline-block" src="assets/detail.png" alt=""> DESSTINASI
+                                </a>
+                            </div>
+                            <div>
+
+                                <a href="#" class=""> 
+                                    <img class="w-4 h-auto inline-block" src="assets/login.png" alt=""> LOGIN
+                                </a>
+                            </div>
+                    </div>
+                    <div class="">
+                        <h1 class="font-semibold text-sm">TETAP TERHUBUNG</h1>
+                                <a href="#" class=""> 
+                                <svg class="inline-block w-4 h-4" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 256 256"><path fill="#4faaf2" d="m187.58 144.84l-32-16a8 8 0 0 0-8 .5l-14.69 9.8a40.55 40.55 0 0 1-16-16l9.8-14.69a8 8 0 0 0 .5-8l-16-32A8 8 0 0 0 104 64a40 40 0 0 0-40 40a88.1 88.1 0 0 0 88 88a40 40 0 0 0 40-40a8 8 0 0 0-4.42-7.16M152 176a72.08 72.08 0 0 1-72-72a24 24 0 0 1 19.29-23.54l11.48 23L101 118a8 8 0 0 0-.73 7.51a56.47 56.47 0 0 0 30.15 30.15A8 8 0 0 0 138 155l14.61-9.74l23 11.48A24 24 0 0 1 152 176M128 24a104 104 0 0 0-91.82 152.88l-11.35 34.05a16 16 0 0 0 20.24 20.24l34.05-11.35A104 104 0 1 0 128 24m0 192a87.87 87.87 0 0 1-44.06-11.81a8 8 0 0 0-6.54-.67L40 216l12.47-37.4a8 8 0 0 0-.66-6.54A88 88 0 1 1 128 216"/></svg> 
+                                08534250522
+                            </a>
+                            <div>
+
+                                <a href="#" class=""> 
+                                    <svg class="w-4 h-4 inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="17" cy="7" r="1.5" fill="#4faaf2" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="1.3s" dur="0.15s" values="0;1"/></circle><g fill="none" stroke="#4faaf2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="72" stroke-dashoffset="72" d="M16 3c2.76 0 5 2.24 5 5v8c0 2.76 -2.24 5 -5 5h-8c-2.76 0 -5 -2.24 -5 -5v-8c0 -2.76 2.24 -5 5 -5h4Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.6s" values="72;0"/></path><path stroke-dasharray="28" stroke-dashoffset="28" d="M12 8c2.21 0 4 1.79 4 4c0 2.21 -1.79 4 -4 4c-2.21 0 -4 -1.79 -4 -4c0 -2.21 1.79 -4 4 -4"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.7s" dur="0.6s" values="28;0"/></path></g></svg>
+                                    SYECHYUSUFM
+                                </a>
+                            </div>
+                            <div>
+
+                                <a href="#" class=""> 
+                                    <svg class="h-4 w-4 inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#4c8bde" fill-opacity="0" d="M15 4.5c-0.39 -0.1 -1.33 -0.5 -3 -0.5c-1.67 0 -2.61 0.4 -3 0.5c-0.53 -0.43 -1.94 -1.5 -3.5 -1.5c-0.34 1 -0.29 2.22 0 3c-0.75 1 -1 2 -1 3.5c0 2.19 0.48 3.58 1.5 4.5c1.02 0.92 2.11 1.37 3.5 1.5c-0.65 0.54 -0.5 1.87 -0.5 2.5v4h6v-4c0 -0.63 0.15 -1.96 -0.5 -2.5c1.39 -0.13 2.48 -0.58 3.5 -1.5c1.02 -0.92 1.5 -2.31 1.5 -4.5c0 -1.5 -0.25 -2.5 -1 -3.5c0.29 -0.78 0.34 -2 0 -3c-1.56 0 -2.97 1.07 -3.5 1.5Z"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.15s" values="0;0.3"/></path><g fill="none" stroke="#4c8bde" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="32" stroke-dashoffset="32" d="M12 4c1.67 0 2.61 0.4 3 0.5c0.53 -0.43 1.94 -1.5 3.5 -1.5c0.34 1 0.29 2.22 0 3c0.75 1 1 2 1 3.5c0 2.19 -0.48 3.58 -1.5 4.5c-1.02 0.92 -2.11 1.37 -3.5 1.5c0.65 0.54 0.5 1.87 0.5 2.5c0 0.73 0 3 0 3M12 4c-1.67 0 -2.61 0.4 -3 0.5c-0.53 -0.43 -1.94 -1.5 -3.5 -1.5c-0.34 1 -0.29 2.22 0 3c-0.75 1 -1 2 -1 3.5c0 2.19 0.48 3.58 1.5 4.5c1.02 0.92 2.11 1.37 3.5 1.5c-0.65 0.54 -0.5 1.87 -0.5 2.5c0 0.73 0 3 0 3"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.7s" values="32;0"/></path><path stroke-dasharray="10" stroke-dashoffset="10" d="M9 19c-1.41 0 -2.84 -0.56 -3.69 -1.19c-0.84 -0.63 -1.09 -1.66 -2.31 -2.31"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.8s" dur="0.2s" values="10;0"/></path></g></svg>
+                                    SYECHYUSUFM
+                                </a>
+                            </div>
+                    </div>
+        </footer>
+    </body>
+    <script>
+        const mobile_menu = document.getElementById("mobile_menu");
+        const toggle_menu_button = document.getElementById("toggle_menu_button");
+        const toggle_open = document.getElementById("toggle_open");
+        const toggle_close = document.getElementById("toggle_close");
+
+        toggle_menu_button.addEventListener("click", () => {
+        mobile_menu.classList.toggle("hidden");
+
+        toggle_open.classList.toggle("hidden");
+        toggle_close.classList.toggle("hidden");
+        });
+
+    </script>
+    </html>
