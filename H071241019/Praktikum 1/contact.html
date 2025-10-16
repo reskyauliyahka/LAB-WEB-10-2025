@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Contact</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">MyPortfolio</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contact Info -->
+  <section>
+    <h2>Contact Information</h2>
+    <table>
+      <tr><td>Email</td><td>dummy@email.com</td></tr>
+      <tr><td>Nomor Telepon</td><td>0812-3456-7890</td></tr>
+      <tr><td>LinkedIn</td><td><a href="#">linkedin.com/in/dummy</a></td></tr>
+      <tr><td>Instagram</td><td><a href="#">@dummy.ig</a></td></tr>
+      <tr><td>GitHub</td><td><a href="#">github.com/dummy</a></td></tr>
+    </table>
+  </section>
+
+  <!-- Contact Form -->
+  <section>
+    <h2>Contact Form</h2>
+    <form>
+      <label>Nama: <input type="text" required></label><br>
+      <label>Email: <input type="email" required></label><br>
+      <label>No. Telepon: <input type="tel" required></label><br>
+
+      <p>Tipe Pesan:</p>
+      <label><input type="radio" name="tipe" value="Pertanyaan" required>Pertanyaan</label>
+      <label><input type="radio" name="tipe" value="Kritik">Kritik</label>
+      <label><input type="radio" name="tipe" value="Saran">Saran</label>
+      <label><input type="radio" name="tipe" value="Kerjasama">Kerjasama</label><br>
+
+      <label>Pesan Detail:<br>
+        <textarea rows="5" required></textarea>
+      </label><br>
+
+      <label><input type="checkbox" required> Saya menyetujui pengolahan data ini</label><br>
+
+      <button type="submit">Kirim</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 MyPortfolio | Ikuti saya di 
+      <a href="#">Instagram</a>, <a href="#">GitHub</a>
+    </p>
+  </footer>
+</body>
+</html>
