@@ -5,14 +5,15 @@ const rl = readline.createInterface({
 });
 
 function hitungHargaSetelahDiskon(harga, jenis) {
+  const daftarJenisBarang = ["elektronik", "pakaian", "makanan", "lainnya"];
   let diskonPersen = 0;
-  const jenisBarang = jenis.toLowerCase();
+  const jenisBarang = jenis.trim().toLowerCase();
 
-  if (jenisBarang === "elektronik") {
+  if (jenisBarang == daftarJenisBarang[0]) {
     diskonPersen = 10;
-  } else if (jenisBarang === "pakaian") {
+  } else if (jenisBarang == daftarJenisBarang[1]) {
     diskonPersen = 20;
-  } else if (jenisBarang === "makanan") {
+  } else if (jenisBarang == daftarJenisBarang[2]) {
     diskonPersen = 5;
   }
 
