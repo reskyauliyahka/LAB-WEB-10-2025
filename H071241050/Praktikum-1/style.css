@@ -1,0 +1,104 @@
+/* Global Style */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background: #727272;
+    color: #333;
+}
+
+/* Header */
+header {
+    display: flex; /* elemen diatur sejajar */
+    justify-content: space-between; /* logo dikiri, menu di kanan */
+    align-items: center; /* vertikalnya rata tengah */
+    background: #222;
+    color: #f7f5f5;
+    padding: 10px 20px;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.hero img {
+    max-width: 300px;  /* atur ukuran maksimal foto */
+    height: auto;      /* biar tidak gepeng */
+    border-radius: 50%; /* opsional, bikin bulat */
+}
+
+nav ul {
+    list-style: none; /* hilangkan tiitk default list */
+    display: flex; /* link disusun horizontal */
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul li a.active, 
+nav ul li a:hover {
+    color: #ff9800;
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 40px 20px;
+    background: #d6d6d6;
+}
+
+.hero img {
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+/* Stats & Sections */
+section {
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.1); 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background: #f4f4f4;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #222;
+    color: #fff;
+    margin-top: 20px;
+}
+
+footer a {
+    color: #ff9800;
+    text-decoration: none;
+}

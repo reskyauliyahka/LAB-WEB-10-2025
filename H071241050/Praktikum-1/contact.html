@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Mahasiswa - Contact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h2 class="logo">MyPorto</h2>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Contact Info -->
+        <section>
+            <h2>Informasi Kontak</h2>
+            <table>
+                <tr><th>Email</th><td>sitarasmirasmi@gmail.com</td></tr>
+                <tr><th>Nomor Telepon</th><td>+62 853-9456-1496</td></tr>
+                <tr><th>LinkedIn</th><td><a href="https://www.linkedin.com/in/sita-rasmi-raihana-546987381?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">Sita Rasmi Raihana</a></td></tr>
+                <tr><th>Instagram</th><td><a href="https://www.instagram.com/s4_rai?igsh=NW43YnpidHV1dGs5">S4_Rai</a></td></tr>
+                <tr><th>GitHub</th><td><a href="https://github.com/Rai-14">Rai-14</a></td></tr>
+            </table>
+        </section>
+
+        <!-- Contact Form -->
+        <section>
+            <h2>Formulir Kontak</h2>
+            <form>
+                <label for="nama">Nama:</label>
+                <input type="text" id="nama" name="nama" required><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+
+                <label for="telepon">Nomor Telepon:</label>
+                <input type="tel" id="telepon" name="telepon" required><br>
+
+                <p>Tipe Pesan:</p>
+                <label><input type="radio" name="tipe" value="Pertanyaan" required>Pertanyaan</label>
+                <label><input type="radio" name="tipe" value="Kritik">Kritik</label>
+                <label><input type="radio" name="tipe" value="Saran">Saran</label>
+                <label><input type="radio" name="tipe" value="Kerjasama">Kerjasama</label><br>
+
+                <label for="pesan">Pesan:</label><br>
+                <textarea id="pesan" name="pesan" required></textarea><br>
+
+                <label>
+                    <input type="checkbox" required> Saya menyetujui pengolahan data ini
+                </label><br>
+
+                <button type="submit">Kirim</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 MyPorto | Follow me on 
+            <a href="https://www.instagram.com/s4_rai?igsh=NW43YnpidHV1dGs5">Instagram</a> | 
+            <a href="https://www.linkedin.com/in/sita-rasmi-raihana-546987381?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a>
+        </p>
+    </footer>
+</body>
+</html>
