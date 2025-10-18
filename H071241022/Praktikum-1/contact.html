@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Sophie's Portofolio</h1>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-info">
+            <h2>Contact Information</h2>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Email</th>
+                        <td><a href="mailto:andisophieamri@gmail.com">andisophieamri@gmail.com</a></td>
+                    </tr>
+                    <tr>
+                        <th>Nomor Telephone</th>
+                        <td>+62 821 5758 2714</td>
+                    </tr>
+                    <tr>
+                        <th>Linkedin</th>
+                        <td><a href="https://www.linkedin.com/in/andi-sophie-amrie/" target="_blank">linkedin.com/in/andi-sophie-amrie/</a></td>
+                    </tr>
+                    <tr>
+                        <th>Instagram</th>
+                        <td><a href="https://www.instagram.com/sophieamrii/" target="_blank">@sophieamrii</a></td>
+                    </tr>
+                    <tr>
+                        <th>Github</th>
+                        <td><a href="https://github.com/sophieamrie" target="_blank">sophieamrie</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="contact-form">
+            <form>
+                <h2>Contact me here!</h2>
+                <div>
+                    <label for="name">Nama Lengkap:</label><br>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div>
+                    <label for="phone">Nomor Telepon:</label><br>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="radio-group">
+                    <label>Tipe Pesan:</label><br><br>
+                    <div class="radio-options">
+                        <span>
+                            <input type="radio" id="msg-question" name="message_type" value="question" required>
+                            <label for="msg-question">Pertanyaan</label>
+                        </span>
+                        <span>
+                            <input type="radio" id="msg-critique" name="message_type" value="critique">
+                            <label for="msg-critique">Kritik</label>
+                        </span>
+                        <span>
+                            <input type="radio" id="msg-suggestion" name="message_type" value="suggestion">
+                            <label for="msg-suggestion">Saran</label>
+                        </span>
+                        <span>
+                            <input type="radio" id="msg-collaboration" name="message_type" value="collaboration">
+                            <label for="msg-collaboration">Kerjasama</label>
+                        </span>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="message">Pesan Detail:</label><br>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="agree-data" name="agree_data" required>
+                    <label for="agree-data">Saya setuju bahwa data ini akan digunakan untuk keperluan komunikasi.</label>
+                </div>
+
+                <div>
+                    <button type="submit">Kirim Pesan</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

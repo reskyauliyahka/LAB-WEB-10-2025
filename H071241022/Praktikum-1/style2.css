@@ -1,0 +1,349 @@
+/* === GLOBAL RESET & VARIABLES === */
+:root {
+  --bg-primary: #0f0f13;
+  --bg-secondary: #1a1a22;
+  --accent: #7d5fff;
+  --accent-light: #9a86ff;
+  --text-primary: #f0f0f5;
+  --text-secondary: #b0b0c0;
+  --glass-bg: rgba(30, 30, 40, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  background-image: radial-gradient(circle at 25% 25%, rgba(125, 95, 255, 0.1) 0%, transparent 50%), 
+                    radial-gradient(circle at 75% 75%, rgba(125, 95, 255, 0.05) 0%, transparent 50%);
+  min-height: 100vh;
+  padding-bottom: 4rem;
+}
+
+/* === TYPOGRAPHY === */
+h1, h2{
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.5em;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 1.8rem; color: var(--accent); }
+
+p, li, td, th, label {
+  color: var(--text-secondary);
+}
+
+strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+/* === HEADER & NAVIGATION === */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5%;
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--glass-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow);
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  background: linear-gradient(90deg, var(--accent), #ff6b6b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+nav a {
+  font-weight: 500;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  transition: var(--transition);
+}
+
+nav a:hover, nav a:focus {
+  background: rgba(125, 95, 255, 0.2);
+  text-decoration: none;
+}
+
+/* === MAIN CONTENT === */
+main {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+
+section {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 2.5rem;
+  margin-bottom: 2.5rem;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* === HERO SECTION === */
+.hero-section {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.profile-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--accent);
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 20px rgba(125, 95, 255, 0.4);
+  transition: var(--transition);
+}
+
+.profile-photo:hover {
+  transform: scale(1.05);
+}
+
+.hero-section h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-section p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* === TABLE STYLING === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+th {
+  font-weight: 600;
+  color: var(--accent);
+  width: 40%;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* === CONTACT FORM === */
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(125, 95, 255, 0.1);
+  box-shadow: 0 0 0 3px rgba(125, 95, 255, 0.2);
+}
+
+.contact-form input[type="radio"] {
+  width: auto;
+  margin-right: 0.5rem;
+}
+
+.contact-form input[type="checkbox"] {
+  width: auto;
+  margin-right: 0.5rem;
+}
+
+.contact-form button {
+  background: linear-gradient(90deg, var(--accent), #6a4cff);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: var(--transition);
+  align-self: flex-start;
+}
+
+.contact-form button:hover {
+  background: linear-gradient(90deg, #6a4cff, var(--accent));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(125, 95, 255, 0.4);
+}
+
+/* === RADIO BUTTONS INLINE STYLING === */
+.radio-options {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+}
+
+.radio-options span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.8rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.radio-options span:hover {
+    background: rgba(125, 95, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.radio-options input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--accent); /* modern way to color radio buttons */
+}
+
+.radio-options label {
+    margin: 0;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+/* === LISTS === */
+ul, ol {
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+li {
+  margin-bottom: 0.7rem;
+}
+
+dl {
+  margin: 1.5rem 0;
+}
+
+dt {
+  font-weight: 600;
+  color: var(--accent);
+  margin-top: 1rem;
+}
+
+dd {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* === FOOTER === */
+footer {
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--glass-border);
+  position: relative;
+  z-index: 10;
+}
+
+footer p {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  padding: 0.6rem 1.2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  border-radius: 30px;
+  transition: var(--transition);
+}
+
+.social-links a:hover {
+  background: rgba(125, 95, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+/* === HR STYLING === */
+hr {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--glass-border), transparent);
+  margin: 2.5rem 0;
+}
+
