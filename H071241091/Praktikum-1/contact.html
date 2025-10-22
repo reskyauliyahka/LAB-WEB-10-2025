@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MUHAMMAD FATHIR SYABHAN</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body id="contact-body">
+    <header>
+      <h2>fathir</h2>
+
+      <nav>
+        <ul>
+          <li>
+            <a href="/index.html">Home</a>
+          </li>
+          <li>
+            <a href="/about.html">About</a>
+          </li>
+          <li>
+            <a href="/contact.html">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="container">
+      <h2 class="section-title">Contact Information</h2>
+
+      <table>
+        <tbody>
+          <tr>
+            <td>Email</td>
+            <td>fathirsyabhaan@gmail.com</td>
+          </tr>
+          <tr>
+            <td>Nomor Telepon</td>
+            <td>08875441416</td>
+          </tr>
+          <tr>
+            <td>Instagram</td>
+            <td>
+              <a
+                href="https://www.instagram.com/fathirrsyabhan?igsh=aGNubHFveGlkZ2Jo&utm_source=qr"
+              >
+                fathirrsyabhan
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>Github</td>
+            <td>
+              <a href="https://github.com/fatirsyabhan"> fatirsyabhan </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="container">
+      <h2 class="section-title">Contact Form</h2>
+
+      <form action="#" method="post">
+        <div class="form-group">
+          <label for="nama">Nama</label>
+          <input type="text" id="nama" name="nama" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="telepon">Nomor Telepon</label>
+          <input type="tel" id="telepon" name="telepon" required />
+        </div>
+
+        <div class="form-group">
+          <label>Tipe Pesan</label>
+          <div class="radio-group">
+            <div>
+              <input
+                type="radio"
+                id="pertanyaan"
+                name="tipe_pesan"
+                value="pertanyaan"
+                required
+              />
+              <label for="pertanyaan">Pertanyaan</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                id="kritik"
+                name="tipe_pesan"
+                value="kritik"
+              />
+              <label for="kritik">Kritik</label>
+            </div>
+            <div>
+              <input type="radio" id="saran" name="tipe_pesan" value="saran" />
+              <label for="saran">Saran</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                id="kerjasama"
+                name="tipe_pesan"
+                value="kerjasama"
+              />
+              <label for="kerjasama">Kerjasama</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="pesan">Pesan Detail</label>
+          <textarea id="pesan" name="pesan" rows="5" required></textarea>
+        </div>
+
+        <div class="form-group checkbox-group">
+          <input type="checkbox" id="persetujuan" name="persetujuan" required />
+          <label for="persetujuan">
+            Saya menyetujui data saya disimpan dan diproses.
+          </label>
+        </div>
+
+        <button type="submit">Kirim Pesan</button>
+      </form>
+    </section>
+
+    <footer>
+      <ul>
+        <li>
+          <i class="fab fa-github contact-icon"></i>
+          <a href="https://github.com/fatirsyabhan"> fatirsyabhan </a>
+        </li>
+
+        <li>
+          <i class="fas fa-phone contact-icon"></i>
+          <a href="https://wa.me/08875441416"> 08875441416 </a>
+        </li>
+      </ul>
+
+      <div>
+        <h5>Copyright @ Muhammad Fathir Syabhan</h5>
+      </div>
+    </footer>
+  </body>
+</html>
