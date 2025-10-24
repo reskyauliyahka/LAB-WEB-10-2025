@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Manajemen Proyek</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+<body style="background-image: url(assets/unnamed.jpg); background-repeat: no-repeat; background-size: cover; ">
+
+    <div class="min-h-screen flex items-center justify-center">
+        <div class=" p-8 rounded-lg shadow-md w-full max-w-sm h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10">
+            
+            <h2 class="text-3xl text-white justify-center text-gray-800 mb-6 flex items-center gap-2">
+                <svg c xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-briefcase"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M22 13.478v4.522a3 3 0 0 1 -3 3h-14a3 3 0 0 1 -3 -3v-4.522l.553 .277a20.999 20.999 0 0 0 18.897 -.002l.55 -.275zm-8 -11.478a3 3 0 0 1 3 3v1h2a3 3 0 0 1 3 3v2.242l-1.447 .724a19.002 19.002 0 0 1 -16.726 .186l-.647 -.32l-1.18 -.59v-2.242a3 3 0 0 1 3 -3h2v-1a3 3 0 0 1 3 -3h4zm-2 8a1 1 0 0 0 -1 1a1 1 0 1 0 2 .01c0 -.562 -.448 -1.01 -1 -1.01zm2 -6h-4a1 1 0 0 0 -1 1v1h6v-1a1 1 0 0 0 -1 -1z" /></svg>Tukang Ku
+            </h2>
+            
+            <form action="login_logic.php" method="post" class="space-y-4">
+                <div>
+                    <label for="username" class="block text-sm font-medium text-white">Username:</label>
+                    <input type="text" name="username" id="username" required
+                           class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm 
+                                  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 ">
+                </div>
+                
+                <div>
+                    <label for="password" class="block text-sm font-medium text-white">Password:</label>
+                    <input type="password" name="password" id="password" required
+                           class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm 
+                                  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                </div>
+                
+                <button type="submit"
+                        class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm 
+                               text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 
+                               focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    Masuk
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const error = urlParams.get('error');
+        const success = urlParams.get('success');
+        let message = '';
+        let type = '';
+        if (error) {
+            message = error;
+            type = 'error';
+        } else if (success) {
+            message = success;
+            type = 'success';
+        }
+        if (message) {
+            const toast = document.createElement('div');
+            let bgColor = type === 'success' ? 'bg-green-600' : 'bg-red-600';
+            let icon = type === 'success' ? 'bi-check-circle-fill' : 'bi-exclamation-triangle-fill';
+            toast.className = `fixed top-5 right-5 z-50 p-4 rounded-md shadow-lg text-white ${bgColor} flex items-center transition-opacity duration-300 ease-out opacity-0`;
+            toast.innerHTML = `<i class="bi ${icon} mr-3 text-xl"></i> <div>${message}</div>`;
+            document.body.appendChild(toast);
+            window.history.replaceState(null, null, window.location.pathname);
+            setTimeout(() => {
+                toast.classList.remove('opacity-0');
+            }, 100);
+            setTimeout(() => {
+                toast.classList.add('opacity-0');
+                setTimeout(() => {
+                    toast.remove();
+                }, 300);
+            }, 3000);
+        }
+    });
+    </script>
+</body>
+</html>
