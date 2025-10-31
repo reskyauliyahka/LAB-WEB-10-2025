@@ -12,3 +12,4 @@ Route::get('/contact', [ContactController::class, 'contact']);
 Route::get('/', [HomeController::class, 'home']);
 Route::get('/gallery', [GalleryController::class, 'gallery']);
 Route::get('/definition', [DefinitionController::class, 'definition']);
+

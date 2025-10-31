@@ -104,9 +104,7 @@
                 </div>
                 </div>
             
-            <div class="mt-62" data-aos="fade-up" data-aos-duration="1000"> 
-                <h1 class="text-white font-bold italic md:text-[180px] text-6xl flex justify-center item-center opacity-90 mb-12">BAU - BAU</h1>
-            </div>
+          
     
 
         </div> </section>
