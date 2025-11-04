@@ -5,47 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Smada SECC Landing Page</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- SweetAlert2 CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <style>
+    #home img {
+      will-change: transform;
+      transition: transform 0.3s ease-out;
+    }
+  </style>
 </head>
 <body class="bg-stone-50 text-gray-800 font-sans">
 
   <!-- Navbar -->
-  <nav class="flex items-center justify-between px-6 py-4 bg-white shadow">
+  <nav class="fixed w-full z-50 flex items-center justify-between px-6 py-4 bg-white transition-all duration-300">
     <div class="flex items-center space-x-2">
       <img src="assets/WhatsApp Image 2025-09-24 at 21.41.43_dc3b6a6c.jpg" alt="Logo" class="w-10 h-10">
       <span class="text-xl font-semibold italic">Smada English Conversation Club</span>
     </div>
     <div class="space-x-6 hidden md:flex">
-      <a href="#home" class="hover:text-blue-200">Home</a>
-      <a href="#about" class="hover:text-blue-200">About</a>
-      <a href="#features" class="hover:text-blue-200">Activity</a>
-      <a href="#contact" class="hover:text-blue-200">Contact</a>
+      <a href="#home" class="hover:text-blue-200 transition-colors">Home</a>
+      <a href="#about" class="hover:text-blue-200 transition-colors">About</a>
+      <a href="#features" class="hover:text-blue-200 transition-colors">Activity</a>
+      <a href="#contact" class="hover:text-blue-200 transition-colors">Contact</a>
     </div>
   </nav>
 
   <!-- Hero Section -->
-<header id="home" class="relative min-h-screen flex items-center justify-center text-center">
-  <!-- Background image with overlay -->
-  <div class="absolute inset-0">
-    <img src="assets/WhatsApp Image 2025-09-24 at 21.52.24_4f82e5ca.jpg" 
-         alt="Hero Background" class="w-full h-full object-cover">
-    <div class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
-  </div>
+  <header id="home" class="relative min-h-screen flex items-center justify-center text-center">
+    <div class="absolute inset-0 overflow-hidden">
+      <img src="assets/WhatsApp Image 2025-09-24 at 21.52.24_4f82e5ca.jpg" 
+           alt="Hero Background" class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+    </div>
 
-  <!-- Content -->
-  <div class="relative z-10 max-w-3xl mx-auto">
-    <h1 class="text-5xl font-bold italic mb-4 text-white">
-      Welcome to <span class="text-blue-200">SECC</span>
-    </h1>
-    <p class="text-xl text-gray-200 mb-6">
-      Conquer the world with us!
-    </p>
-    <a href="#about" 
-       class="px-8 py-4 bg-blue-200 text-gray-800 rounded-lg hover:bg-blue-300 transition font-medium">
-      Learn more
-    </a>
-  </div>
-</header>
-
+    <div class="relative z-10 max-w-3xl mx-auto opacity-0 translate-y-8 transition-all duration-1000" id="hero-content">
+      <h1 class="text-5xl font-bold italic mb-4 text-white">
+        Welcome to <span class="text-blue-200">SECC</span>
+      </h1>
+      <p class="text-xl text-gray-200 mb-6">
+        Conquer the world with us!
+      </p>
+      <a href="#about" 
+         class="px-8 py-4 bg-blue-200 text-gray-800 rounded-lg hover:bg-blue-300 transition-transform duration-150 inline-block">
+        Learn more
+      </a>
+    </div>
+  </header>
 
   <!-- About Section -->
   <section id="about" class="py-16 px-6 bg-white">
@@ -59,28 +65,27 @@
         own unique way.
       </p>
 
-      <!-- Divisions Grid -->
       <div class="grid gap-8 md:grid-cols-4">
-        <div class="p-6 bg-stone-50 rounded-lg shadow hover:shadow-lg transition">
+        <div class="p-6 bg-stone-50 rounded-lg shadow hover:shadow-lg hover:scale-105 transition-transform duration-300">
           <h3 class="text-xl font-semibold text-blue-400 mb-2">Speech</h3>
           <p class="text-gray-600 text-sm">
             A place to practice public speaking, storytelling, and delivering powerful
             messages with confidence.
           </p>
         </div>
-        <div class="p-6 bg-stone-50 rounded-lg shadow hover:shadow-lg transition">
+        <div class="p-6 bg-stone-50 rounded-lg shadow hover:shadow-lg hover:scale-105 transition-transform duration-300">
           <h3 class="text-xl font-semibold text-blue-400 mb-2">Debate</h3>
           <p class="text-gray-600 text-sm">
             Training critical thinking and argumentation skills through discussions and competitions.
           </p>
         </div>
-        <div class="p-6 bg-stone-50 rounded-lg shadow hover:shadow-lg transition">
+        <div class="p-6 bg-stone-50 rounded-lg shadow hover:shadow-lg hover:scale-105 transition-transform duration-300">
           <h3 class="text-xl font-semibold text-blue-400 mb-2">Art</h3>
           <p class="text-gray-600 text-sm">
             Channeling creativity through design, performances, and various artistic expressions.
           </p>
         </div>
-        <div class="p-6 bg-stone-50 rounded-lg shadow hover:shadow-lg">
+        <div class="p-6 bg-stone-50 rounded-lg shadow hover:shadow-lg hover:scale-105 transition-transform duration-300">
           <h3 class="text-xl font-semibold text-blue-400 mb-2">Broadcast</h3>
           <p class="text-gray-600 text-sm">
             Developing skills in news presenting and delivering information clearly, 
@@ -91,48 +96,41 @@
     </div>
   </section>
 
+  <!-- Activities Section -->
+  <section id="features" class="py-8 px-6 bg-white">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl font-semibold italic mb-12">Our Activities!</h2>
+      <div class="grid gap-8 md:grid-cols-3">
+        <div class="p-6 bg-stone-50 rounded-lg shadow hover:shadow-xl hover:scale-105 transition-transform duration-300">
+          <img src="assets/WhatsApp Image 2025-09-24 at 22.22.55_c1031702.jpg" alt="Event" class="w-full h-40 object-cover rounded-md mb-4">
+          <h3 class="text-xl font-semibold text-blue-400 mb-2">SECON</h3>
+          <p class="text-gray-700">Yearly event to hold an English competition</p>
+        </div>
 
-<!-- activities Grid -->
-<section id="features" class="py-8 px-6 bg-white">
-  <div class="max-w-6xl mx-auto text-center">
-    <h2 class="text-3xl font-semibold italic mb-12">Our Activities!</h2>
-    <div class="grid gap-8 md:grid-cols-3">
-      
-      <!-- Card 1 -->
-      <div class="p-6 bg-stone-50 rounded-lg shadow hover:shadow-lg transition">
-        <img src="assets/WhatsApp Image 2025-09-24 at 22.22.55_c1031702.jpg" alt="Event" class="w-full h-40 object-cover rounded-md mb-4">
-        <h3 class="text-xl font-semibold text-blue-400 mb-2">SECON</h3>
-        <p class="text-gray-700">Yearly event to hold an english competition</p>
-      </div>
-      
-      <!-- Card 2 -->
-      <div class="p-6 bg-stone-50 rounded-lg shadow hover:shadow-lg transition">
-        <img src="assets/WhatsApp Image 2025-09-24 at 22.28.18_b09a2a99.jpg" alt="Self Development" class="w-full h-40 object-cover rounded-md mb-4">
-        <h3 class="text-xl font-semibold text-blue-400 mb-2">Division Training</h3>
-        <p class="text-gray-700">Division training done monthly to help members with their skill</p>
-      </div>
-      
-      <!-- Card 3 -->
-      <div class="p-6 bg-stone-50 rounded-lg shadow hover:shadow-lg transition">
-        <img src="assets/WhatsApp Image 2025-09-24 at 22.31.27_c0c2fc34.jpg" alt="Community" class="w-full h-40 object-cover rounded-md mb-4">
-        <h3 class="text-xl font-semibold text-blue-400 mb-2">SECC Holiday</h3>
-        <p class="text-gray-700">Holidays for the secc members to bond </p>
-      </div>
+        <div class="p-6 bg-stone-50 rounded-lg shadow hover:shadow-xl hover:scale-105 transition-transform duration-300">
+          <img src="assets/WhatsApp Image 2025-09-24 at 22.28.18_b09a2a99.jpg" alt="Self Development" class="w-full h-40 object-cover rounded-md mb-4">
+          <h3 class="text-xl font-semibold text-blue-400 mb-2">Division Training</h3>
+          <p class="text-gray-700">Division training done monthly to help members with their skills</p>
+        </div>
 
+        <div class="p-6 bg-stone-50 rounded-lg shadow hover:shadow-xl hover:scale-105 transition-transform duration-300">
+          <img src="assets/WhatsApp Image 2025-09-24 at 22.31.27_c0c2fc34.jpg" alt="Community" class="w-full h-40 object-cover rounded-md mb-4">
+          <h3 class="text-xl font-semibold text-blue-400 mb-2">SECC Holiday</h3>
+          <p class="text-gray-700">Holidays for SECC members to bond</p>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- Contact Section -->
   <section id="contact" class="py-16 px-6">
     <div class="max-w-xl mx-auto text-center">
       <h2 class="text-3xl font-semibold italic mb-6">Contact us for more!</h2>
-      <form class="space-y-4">
+      <form id="contact-form" class="space-y-4">
         <input type="text" placeholder="Nama" class="w-full p-3 border border-gray-300 rounded-lg">
         <input type="email" placeholder="Email" class="w-full p-3 border border-gray-300 rounded-lg">
         <textarea placeholder="Pesan" rows="4" class="w-full p-3 border border-gray-300 rounded-lg"></textarea>
-        <button type="submit" class="w-1/2 py-3 bg-blue-200 text-gray-800 rounded-lg hover:bg-blue-300 transition font-semibold">
+        <button type="submit" class="w-1/2 py-3 bg-blue-200 text-gray-800 rounded-lg hover:bg-blue-300 transition-transform duration-150">
           Kirim
         </button>
       </form>
@@ -146,5 +144,100 @@
       <a href="https://www.instagram.com/secc02/" target="_blank" class="text-blue-200 hover:text-blue-300">Instagram</a>
     </div>
   </footer>
+
+  <script>
+    /* Smooth scroll */
+    document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    /* Navbar scroll effect */
+    const navbar = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('bg-white/90', 'backdrop-blur', 'shadow-md');
+      } else {
+        navbar.classList.remove('bg-white/90', 'backdrop-blur', 'shadow-md');
+      }
+    });
+
+    /* Intersection Observer for fade-in */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('opacity-100', 'translate-y-0');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('section').forEach(section => {
+      section.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-700');
+      observer.observe(section);
+    });
+
+    /* Staggered division cards */
+    document.querySelectorAll('#about .grid > div').forEach((card, index) => {
+      card.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-700');
+      card.style.transitionDelay = `${index * 150}ms`;
+      observer.observe(card);
+    });
+
+    /* Hero text entrance */
+    window.addEventListener('DOMContentLoaded', () => {
+      const hero = document.getElementById('hero-content');
+      setTimeout(() => {
+        hero.classList.remove('opacity-0', 'translate-y-8');
+        hero.classList.add('opacity-100', 'translate-y-0');
+      }, 300);
+    });
+
+    /* Button micro-interaction */
+    document.querySelectorAll('button, a[href^="#"]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.classList.add('scale-95');
+        setTimeout(() => btn.classList.remove('scale-95'), 150);
+      });
+    });
+
+    /* Parallax hero background */
+    window.addEventListener('scroll', () => {
+      const offset = window.scrollY * 0.4;
+      document.querySelector('#home img').style.transform = `translateY(${offset}px)`;
+    });
+
+    /* SweetAlert for contact form */
+    const contactForm = document.getElementById('contact-form');
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = contactForm.querySelector('input[type="text"]').value.trim();
+      const email = contactForm.querySelector('input[type="email"]').value.trim();
+      const message = contactForm.querySelector('textarea').value.trim();
+
+      if (!name || !email || !message) {
+        Swal.fire({
+          icon: 'warning',
+          title: 'Incomplete',
+          text: 'Please fill in all fields before submitting!',
+          confirmButtonColor: '#60a5fa'
+        });
+        return;
+      }
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Message Sent!',
+        text: `Thank you, ${name}. We'll get back to you soon!`,
+        confirmButtonColor: '#60a5fa'
+      });
+
+      contactForm.reset();
+    });
+  </script>
+
 </body>
 </html>
