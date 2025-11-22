@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game UNO</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="start-round-modal" class="modal-overlay visible">
+      <div class="modal-content">
+        <h2>Atur Taruhan Awal</h2>
+        <p>Saldo Anda: <span id="start-balance-display">$5000</span></p>
+        <div>
+          <label for="initial-bet-amount">Jumlah Taruhan:</label>
+          <input
+            type="number"
+            id="initial-bet-amount"
+            value="100"
+            min="100"
+          />
+        </div>
+        <p id="start-modal-message" style="color: #ffc107"></p>
+        <button id="start-game-button">Mulai Bermain</button>
+      </div>
+    </div>
+
+    <div class="game-board">
+      <div class="player-area bot-area" id="bot-area">
+        <div class="turn-indicator">Bot's Turn</div>
+        <h2>Bot Hand</h2>
+        <div class="hand-container" id="bot-hand"></div>
+      </div>
+
+      <div class="table-area">
+        <div class="deck-pile">
+          <p>Deck</p>
+          <img src="assets/card_back.png" alt="Deck" class="card" id="deck" />
+        </div>
+        <div class="discard-pile">
+          <p>Discard</p>
+          <div id="discard-pile-card"></div>
+        </div>
+      </div>
+
+      <div class="player-area user-area" id="player-area">
+        <h2>Your Hand</h2>
+        <div class="turn-indicator">Your Turn</div>
+        <div class="hand-container" id="player-hand"></div>
+      </div>
+
+      <div class="info-action-area">
+        <p>Saldo: <span id="balance">$5000</span></p>
+
+        <div>
+          <label for="bet-amount">Jumlah Taruhan:</label>
+          <input type="number" id="bet-amount" value="100" min="0" readonly/>
+        </div>
+        <p id="message-area"></p>
+        <button id="pass-button" class="hidden">Pass Turn</button>
+        <button id="uno-button" class="hidden">UNO!</button>
+        <button id="call-uno-button" class="hidden">Call UNO on Bot!</button>
+      </div>
+    </div>
+
+    <div id="color-picker-modal" class="modal-overlay">
+      <div class="modal-content">
+        <h3>Pilih Warna Berikutnya</h3>
+        <div class="color-picker">
+          <div class="color-choice red" data-color="red"></div>
+          <div class="color-choice yellow" data-color="yellow"></div>
+          <div class="color-choice green" data-color="green"></div>
+          <div class="color-choice blue" data-color="blue"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="win-modal" class="modal-overlay">
+      <div class="modal-content">
+        <h2 id="win-message">You Won!</h2>
+        <p>Bersiap untuk ronde berikutnya...</p>
+      </div>
+    </div>
+
+    <div id="game-over-modal" class="modal-overlay">
+      <div class="modal-content">
+        <h2 id="game-over-message">Game Over!</h2>
+        <p>Saldo Anda habis.</p>
+        <button id="restart-game-button">Mulai Ulang</button>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,278 @@
+/* Import Font dari Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+/* Reset dan Pengaturan Dasar */
+:root {
+  --green-table: #1a3a1a;
+  --dark-green-table: #112a11;
+  --card-red: #d92d2d;
+  --card-blue: #2d6ad9;
+  --card-green: #4caf50;
+  --card-yellow: #ffc107;
+  --card-black: #222;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--green-table);
+  color: white;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Tata Letak Utama Permainan */
+.game-board {
+  width: 100%;
+  height: 100vh;
+  max-width: 1400px;
+  display: grid;
+  grid-template-rows: 1fr 2fr 1fr;
+  grid-template-areas:
+    "bot"
+    "table"
+    "player";
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Area Pemain (Bot dan User) */
+.player-area {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.bot-area {
+  grid-area: bot;
+}
+.user-area {
+  grid-area: player;
+}
+
+.player-area h2 {
+  margin: 5px 0;
+  font-weight: 600;
+  text-shadow: 1px 1px 3px black;
+}
+
+.hand-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Indikator Giliran */
+.turn-indicator {
+  position: absolute;
+  bottom: 0;
+  padding: 5px 15px;
+  background-color: var(--card-yellow);
+  color: var(--card-black);
+  border-radius: 15px;
+  font-weight: bold;
+  box-shadow: 0 0 10px var(--card-yellow);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.player-area.active .turn-indicator {
+  opacity: 1;
+}
+.user-area .turn-indicator {
+  top: 0;
+  bottom: auto;
+}
+
+/* Desain Kartu */
+.card {
+  width: 80px;
+  height: 120px;
+  border-radius: 8px;
+  border: 2px solid white;
+  font-size: 1.8em;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease, margin 0.2s ease;
+  margin-left: -40px; /* Kartu saling tumpang tindih */
+}
+.hand-container .card:first-child {
+  margin-left: 0;
+}
+
+.user-area .card:hover {
+  transform: translateY(-20px) scale(1.05);
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Hapus semua styling warna dan background karena kita akan menggunakan gambar */
+/*
+.card.back { ... }
+.card.red { ... }
+  background-color: var(--card-red);
+}
+.card.blue {
+  background-color: var(--card-blue);
+}
+.card.green {
+  background-color: var(--card-green);
+}
+.card.yellow {
+  background-color: var(--card-yellow);
+}
+.card.wild {
+  background: linear-gradient(
+    135deg,
+    var(--card-red) 25%,
+    var(--card-yellow) 25%,
+    var(--card-yellow) 50%,
+    var(--card-blue) 50%,
+    var(--card-blue) 75%,
+    var(--card-green) 75%
+  );
+} */
+
+/* Area Tengah (Meja) */
+.table-area {
+  grid-area: table;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.deck-pile,
+.discard-pile {
+  text-align: center;
+}
+
+#deck {
+  cursor: pointer;
+}
+
+/* Pastikan gambar kartu di discard pile tidak memiliki border atau background aneh */
+#discard-pile-card .card {
+  margin-left: 0;
+}
+
+/* Info Area */
+.info-action-area {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  border-radius: 10px;
+  z-index: 100;
+}
+.info-action-area p {
+  margin: 5px 0;
+}
+#balance {
+  font-weight: bold;
+}
+#message-area {
+  margin-top: 10px;
+  color: var(--card-yellow);
+  font-weight: bold;
+}
+
+/* Tombol Pass dan UNO */
+#pass-button,
+#uno-button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.9em;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: var(--card-yellow);
+  color: var(--card-black);
+}
+
+.hidden {
+  display: none;
+}
+
+/* Modal / Pop-up */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.3s, opacity 0.3s ease;
+}
+.modal-overlay.visible {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 0.3s ease;
+}
+
+.modal-content {
+  background-color: var(--dark-green-table);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.color-picker {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.color-choice {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 3px solid white;
+}
+
+/* Memberi warna pada setiap pilihan */
+.color-choice.red {
+  background-color: var(--card-red);
+}
+.color-choice.yellow {
+  background-color: var(--card-yellow);
+}
+.color-choice.green {
+  background-color: var(--card-green);
+}
+.color-choice.blue {
+  background-color: var(--card-blue);
+}
+
+#game-over-modal button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: var(--card-yellow);
+}
+
+#win-modal .modal-content {
+  background-color: var(--card-yellow);
+}
