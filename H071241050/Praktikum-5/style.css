@@ -1,0 +1,38 @@
+/* style.css - sederhana tapi rapi */
+* { box-sizing: border-box; font-family: Arial, sans-serif; }
+body {
+  background: #f2f6ff;
+  color: #1a202c;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  width: 100%;
+  max-width: 880px;
+  margin: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(20,30,60,0.08);
+  padding: 24px;
+}
+.header { text-align: center; margin-bottom: 12px; }
+.form-row { margin-bottom: 12px; }
+label { display:block; margin-bottom:6px; font-weight:600; font-size:14px; }
+input[type="text"], input[type="password"] {
+  width:100%; padding:10px 12px; border:1px solid #e2e8f0; border-radius:6px;
+}
+button {
+  background:#2563eb; color:#fff; border:none;
+  padding:10px 16px; border-radius:8px; cursor:pointer; font-weight:600;
+}
+button:hover { opacity:0.95; }
+.alert { background:#fff3f2; color:#b91c1c; padding:10px; border-radius:6px; border:1px solid #fcd0d0; margin-bottom:12px; }
+.table { width:100%; border-collapse:collapse; margin-top:12px; }
+.table th, .table td { border:1px solid #e6eef9; padding:8px 10px; text-align:left; }
+.small { font-size:13px; color:#6b7280; }
+.topbar { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; }
+.logout { background:transparent; color:#ef4444; border:1px solid #fca5a5; padding:6px 10px; border-radius:6px; text-decoration:none; }
