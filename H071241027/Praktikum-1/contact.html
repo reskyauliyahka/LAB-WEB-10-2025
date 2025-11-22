@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Portofolio Saya</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">Wanule</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="contact-info">
+            <h2>Informasi Kontak</h2>
+            <table>
+                <tr>
+                    <td>Email</td>
+                    <td><a href="mailto:ichwanulmusliminmayang@gmail.com">ichwanulmusliminmayang@gmail.com</a></td>
+                </tr>
+                <tr>
+                    <td>Nomor Telepon</td>
+                    <td><a href="tel:+6282321054927">+62 823-2105-4927</a></td>
+                </tr>
+                <tr>
+                    <td>LinkedIn</td>
+                    <td><a href="#" target="_blank">Moch Ichwanul Muslimin Mayang</a></td>
+                </tr>
+                <tr>
+                    <td>Instagram</td>
+                    <td><a href="https://instagram.com/wanll.25" target="_blank">@wanll.25</a></td>
+                </tr>
+                <tr>
+                    <td>GitHub</td>
+                    <td><a href="https://github.com/NexonShoutt" target="_blank">NexonShoutt</a></td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="contact-form">
+            <h2>Kirim Pesan</h2>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="name">Nama Lengkap:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Alamat Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Nomor Telepon:</label>
+                    <input type="number" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label>Tipe Pesan:</label>
+                    <div class="radio-group">
+                        <input type="radio" id="question" name="message_type" value="Pertanyaan" required> <label for="question">Pertanyaan</label>
+                        <input type="radio" id="criticism" name="message_type" value="Kritik"> <label for="criticism">Kritik</label>
+                        <input type="radio" id="suggestion" name="message_type" value="Saran"> <label for="suggestion">Saran</label>
+                        <input type="radio" id="cooperation" name="message_type" value="Kerjasama"> <label for="cooperation">Kerjasama</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Pesan Detail:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="agreement" name="agreement" required>
+                        <label for="agreement">Saya setuju data saya disimpan dan digunakan untuk menghubungi saya kembali.</label>
+                    </div>
+                </div>
+                <button type="submit">Kirim Pesan</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Wanul</p>
+            <div class="social-links">
+                <a href="#" target="_blank">LinkedIn</a> |
+                <a href="https://github.com/NexonShoutt" target="_blank">GitHub</a> |
+                <a href="https://instagram.com/@wanll.25" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
