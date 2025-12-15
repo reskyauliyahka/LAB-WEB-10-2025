@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game UNO</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: white;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .game-info {
+            display: flex;
+            justify-content: space-between;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .betting-section {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            align-items: center;
+        }
+
+        .bet-controls {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        input {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 100px;
+            text-align: center;
+        }
+
+        .game-area {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .opponent-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .opponent-cards {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .opponent-card {
+            width: 60px;
+            height: 90px;
+            background: linear-gradient(45deg, #1a2a6c, #b21f1f);
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+            color: white;
+            font-weight: bold;
+            border: 2px solid white;
+        }
+
+        .center-area {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .deck {
+            width: 100px;
+            height: 150px;
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+            border: 2px solid white;
+        }
+
+        .discard-pile {
+            width: 100px;
+            height: 150px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            position: relative;
+            border: 2px solid white;
+        }
+
+        .player-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .player-cards {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            min-height: 160px;
+        }
+
+        .card {
+            width: 80px;
+            height: 120px;
+            border-radius: 8px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: transform 0.3s;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid white;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Fallback colors jika gambar tidak load */
+        .card.red { background-color: #e74c3c; }
+        .card.blue { background-color: #3498db; }
+        .card.green { background-color: #2ecc71; }
+        .card.yellow { background-color: #f1c40f; color: #333; }
+        .card.black { background-color: #2c3e50; }
+
+        .card-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+
+        .card-symbol {
+            font-size: 1.2rem;
+            margin-top: 5px;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+            text-align: center;
+        }
+
+        .game-log {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            max-height: 150px;
+            overflow-y: auto;
+        }
+
+        .game-log p {
+            margin: 5px 0;
+            padding: 5px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .uno-button {
+            background-color: #e74c3c;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .uno-button:disabled {
+            background-color: #7f8c8d;
+        }
+
+        .game-over {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+        }
+
+        .game-over-content {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .color-selector {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+            align-items: center;
+        }
+
+        .color-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .color-button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 3px solid white;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .color-button.red {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        .color-button.blue {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .color-button.green {
+            background-color: #2ecc71;
+            color: white;
+        }
+
+        .color-button.yellow {
+            background-color: #f1c40f;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                width: 60px;
+                height: 90px;
+            }
+
+            .card-value {
+                font-size: 1.4rem;
+            }
+
+            .card-symbol {
+                font-size: 1rem;
+            }
+
+            .deck, .discard-pile {
+                width: 70px;
+                height: 105px;
+            }
+        }
+
+        .current-color {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>UNO</h1>
+            <p>Permainan kartu seru untuk semua orang!</p>
+        </header>
+
+        <div class="game-info">
+            <div class="balance">
+                <h2>Saldo: $<span id="balance">5000</span></h2>
+            </div>
+            <div class="current-bet">
+                <h2>Taruhan: $<span id="current-bet">0</span></h2>
+            </div>
+            <div class="turn-info">
+                <h2>Giliran: <span id="turn-indicator">Anda</span></h2>
+            </div>
+        </div>
+
+        <div class="current-color" id="current-color" style="display: none;">
+            Warna Saat Ini: <span id="current-color-value">Merah</span>
+        </div>
+
+        <div class="betting-section" id="betting-section">
+            <h2>Pasang Taruhan</h2>
+            <div class="bet-controls">
+                <input type="number" id="bet-amount" min="100" max="5000" value="100">
+                <button id="place-bet">Pasang Taruhan</button>
+            </div>
+        </div>
+
+        <div class="game-area" id="game-area" style="display: none;">
+            <div class="opponent-area">
+                <h2>Bot (Kartu: <span id="opponent-card-count">7</span>)</h2>
+                <div class="opponent-cards" id="opponent-cards">
+                    <!-- Kartu bot akan ditampilkan di sini -->
+                </div>
+            </div>
+
+            <div class="center-area">
+                <div class="deck" id="deck">
+                    <span>DECK</span>
+                </div>
+                <div class="discard-pile" id="discard-pile">
+                    <!-- Kartu teratas akan ditampilkan di sini -->
+                </div>
+                <div class="uno-button-container">
+                    <button class="uno-button" id="uno-button" disabled>UNO!</button>
+                </div>
+            </div>
+
+            <div class="player-area">
+                <h2>Anda (Kartu: <span id="player-card-count">7</span>)</h2>
+                <div class="player-cards" id="player-cards">
+                    <!-- Kartu pemain akan ditampilkan di sini -->
+                </div>
+                <div class="color-selector" id="color-selector" style="display: none;">
+                    <h3>Pilih Warna:</h3>
+                    <div class="color-buttons">
+                        <button class="color-button red" data-color="red">MERAH</button>
+                        <button class="color-button blue" data-color="blue">BIRU</button>
+                        <button class="color-button green" data-color="green">HIJAU</button>
+                        <button class="color-button yellow" data-color="yellow">KUNING</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-log">
+            <h2>Log Permainan</h2>
+            <div id="log-messages">
+                <p>Selamat datang di permainan UNO! Pasang taruhan untuk memulai.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-over hidden" id="game-over">
+        <div class="game-over-content">
+            <h1>Game Over</h1>
+            <p id="game-over-message">Saldo Anda telah habis!</p>
+            <button id="restart-button">Main Lagi</button>
+        </div>
+    </div>
+
+    <script>
+        // Konstanta dan variabel global
+        const COLORS = ['red', 'blue', 'green', 'yellow'];
+        const VALUES = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'skip', 'reverse', 'draw-two'];
+        
+        let deck = [];
+        let discardPile = [];
+        let playerHand = [];
+        let opponentHand = [];
+        let currentPlayer = 'player';
+        let currentColor = null;
+        let currentValue = null;
+        let balance = 5000;
+        let currentBet = 0;
+        let gameStarted = false;
+        let unoPressed = false;
+        let unoTimeout = null;
+        let drawTwoActive = false;
+        let drawFourActive = false;
+        let skipActive = false;
+        let waitingForColorSelection = false;
+
+        // Elemen DOM
+        const balanceElement = document.getElementById('balance');
+        const currentBetElement = document.getElementById('current-bet');
+        const turnIndicator = document.getElementById('turn-indicator');
+        const bettingSection = document.getElementById('betting-section');
+        const gameArea = document.getElementById('game-area');
+        const playerCardsElement = document.getElementById('player-cards');
+        const opponentCardsElement = document.getElementById('opponent-cards');
+        const discardPileElement = document.getElementById('discard-pile');
+        const deckElement = document.getElementById('deck');
+        const unoButton = document.getElementById('uno-button');
+        const colorSelector = document.getElementById('color-selector');
+        const logMessages = document.getElementById('log-messages');
+        const betAmountInput = document.getElementById('bet-amount');
+        const placeBetButton = document.getElementById('place-bet');
+        const gameOverScreen = document.getElementById('game-over');
+        const gameOverMessage = document.getElementById('game-over-message');
+        const restartButton = document.getElementById('restart-button');
+        const currentColorElement = document.getElementById('current-color');
+        const currentColorValue = document.getElementById('current-color-value');
+        const playerCardCount = document.getElementById('player-card-count');
+        const opponentCardCount = document.getElementById('opponent-card-count');
+
+        // Inisialisasi permainan
+        function initGame() {
+            createDeck();
+            shuffleDeck();
+            dealCards();
+            startGame();
+        }
+
+        // Membuat deck kartu
+        function createDeck() {
+            deck = [];
+            
+            // Kartu berwarna (0-9, skip, reverse, draw-two)
+            COLORS.forEach(color => {
+                VALUES.forEach(value => {
+                    // Untuk angka 0, hanya ada satu kartu per warna
+                    if (value === '0') {
+                        deck.push({ 
+                            color, 
+                            value, 
+                            type: value === 'skip' || value === 'reverse' || value === 'draw-two' ? 'action' : 'number',
+                            image: `assets/cards/${color}_${value}.png`
+                        });
+                    } 
+                    // Untuk kartu lainnya, ada dua kartu per warna
+                    else {
+                        deck.push({ 
+                            color, 
+                            value, 
+                            type: value === 'skip' || value === 'reverse' || value === 'draw-two' ? 'action' : 'number',
+                            image: `assets/cards/${color}_${value}.png`
+                        });
+                        deck.push({ 
+                            color, 
+                            value, 
+                            type: value === 'skip' || value === 'reverse' || value === 'draw-two' ? 'action' : 'number',
+                            image: `assets/cards/${color}_${value}.png`
+                        });
+                    }
+                });
+            });
+            
+            // Kartu wild (4 wild dan 4 wild-draw-four)
+            for (let i = 0; i < 4; i++) {
+                deck.push({ 
+                    color: 'black', 
+                    value: 'wild', 
+                    type: 'wild',
+                    image: 'assets/cards/wild.png'
+                });
+                deck.push({ 
+                    color: 'black', 
+                    value: 'wild-draw-four', 
+                    type: 'wild',
+                    image: 'assets/cards/wild_draw_four.png'
+                });
+            }
+        }
+
+        // Mengacak deck
+        function shuffleDeck() {
+            for (let i = deck.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [deck[i], deck[j]] = [deck[j], deck[i]];
+            }
+        }
+
+        // Membagikan kartu
+        function dealCards() {
+            playerHand = [];
+            opponentHand = [];
+            
+            // Bagikan 7 kartu untuk setiap pemain
+            for (let i = 0; i < 7; i++) {
+                playerHand.push(deck.pop());
+                opponentHand.push(deck.pop());
+            }
+            
+            // Letakkan kartu pertama di discard pile - pastikan bukan kartu wild
+            let firstCard;
+            do {
+                if (deck.length === 0) {
+                    // Jika deck kosong, buat ulang
+                    createDeck();
+                    shuffleDeck();
+                }
+                firstCard = deck.pop();
+            } while (firstCard.color === 'black'); // Ulangi sampai dapat kartu berwarna
+            
+            currentColor = firstCard.color;
+            currentValue = firstCard.value;
+            discardPile.push(firstCard);
+            
+            updateUI();
+        }
+
+        // Memulai permainan
+        function startGame() {
+            gameStarted = true;
+            bettingSection.style.display = 'none';
+            gameArea.style.display = 'flex';
+            currentColorElement.style.display = 'block';
+            updateCurrentColorDisplay();
+            addLogMessage(`Permainan dimulai! Kartu pertama: ${getCardName(discardPile[0])}`);
+        }
+
+        // Update tampilan warna saat ini
+        function updateCurrentColorDisplay() {
+            const colorNames = {
+                'red': 'MERAH',
+                'blue': 'BIRU', 
+                'green': 'HIJAU',
+                'yellow': 'KUNING'
+            };
+            currentColorValue.textContent = colorNames[currentColor] || currentColor;
+            currentColorValue.style.color = currentColor;
+            currentColorValue.style.fontWeight = 'bold';
+        }
+
+        // Memperbarui UI
+        function updateUI() {
+            // Update saldo dan taruhan
+            balanceElement.textContent = balance;
+            currentBetElement.textContent = currentBet;
+            
+            // Update giliran
+            turnIndicator.textContent = currentPlayer === 'player' ? 'Anda' : 'Bot';
+            
+            // Update jumlah kartu
+            playerCardCount.textContent = playerHand.length;
+            opponentCardCount.textContent = opponentHand.length;
+            
+            // Update kartu pemain
+            playerCardsElement.innerHTML = '';
+            playerHand.forEach((card, index) => {
+                const cardElement = createCardElement(card, index, true);
+                playerCardsElement.appendChild(cardElement);
+            });
+            
+            // Update kartu lawan - hanya tampilkan kartu belakang
+            opponentCardsElement.innerHTML = '';
+            opponentHand.forEach(() => {
+                const cardElement = document.createElement('div');
+                cardElement.className = 'opponent-card';
+                cardElement.textContent = 'UNO';
+                opponentCardsElement.appendChild(cardElement);
+            });
+            
+            // Update discard pile
+            discardPileElement.innerHTML = '';
+            if (discardPile.length > 0) {
+                const topCard = discardPile[discardPile.length - 1];
+                const cardElement = createCardElement(topCard, 0, false);
+                discardPileElement.appendChild(cardElement);
+            }
+            
+            // Update tombol UNO
+            if (playerHand.length === 1 && !unoPressed) {
+                unoButton.disabled = false;
+                startUnoTimer();
+            } else {
+                unoButton.disabled = true;
+                clearTimeout(unoTimeout);
+            }
+
+            // Update warna saat ini
+            updateCurrentColorDisplay();
+        }
+
+        // Membuat elemen kartu
+        function createCardElement(card, index, isPlayerCard) {
+            const cardElement = document.createElement('div');
+            cardElement.className = `card ${card.color}`;
+            cardElement.dataset.index = index;
+            
+            // Coba load gambar
+            if (card.image) {
+                cardElement.style.backgroundImage = `url('${card.image}')`;
+            }
+            
+            // Fallback jika gambar gagal load
+            cardElement.onerror = function() {
+                this.style.backgroundImage = 'none';
+                const valueElement = document.createElement('div');
+                valueElement.className = 'card-value';
+                
+                let displayValue = card.value;
+                if (card.value === 'skip') displayValue = '⏭️';
+                else if (card.value === 'reverse') displayValue = '🔄';
+                else if (card.value === 'draw-two') displayValue = '+2';
+                else if (card.value === 'wild') displayValue = 'W';
+                else if (card.value === 'wild-draw-four') displayValue = '+4';
+                
+                valueElement.textContent = displayValue;
+                
+                const symbolElement = document.createElement('div');
+                symbolElement.className = 'card-symbol';
+                
+                if (card.type === 'action' || card.type === 'wild') {
+                    if (card.value === 'skip') symbolElement.textContent = 'SKIP';
+                    else if (card.value === 'reverse') symbolElement.textContent = 'REVERSE';
+                    else if (card.value === 'draw-two') symbolElement.textContent = 'DRAW 2';
+                    else if (card.value === 'wild') symbolElement.textContent = 'WILD';
+                    else if (card.value === 'wild-draw-four') symbolElement.textContent = 'WILD +4';
+                }
+                
+                this.appendChild(valueElement);
+                if (card.type === 'action' || card.type === 'wild') {
+                    this.appendChild(symbolElement);
+                }
+            };
+            
+            // Test load gambar
+            const testImage = new Image();
+            testImage.onerror = function() {
+                cardElement.onerror();
+            };
+            testImage.src = card.image || '';
+            
+            // Tambahkan event listener untuk kartu pemain
+            if (isPlayerCard && currentPlayer === 'player' && gameStarted && !waitingForColorSelection) {
+                cardElement.style.cursor = 'pointer';
+                cardElement.addEventListener('click', () => playCard(index));
+            } else {
+                cardElement.style.cursor = 'default';
+            }
+            
+            return cardElement;
+        }
+
+        // Memainkan kartu
+        function playCard(cardIndex) {
+            if (currentPlayer !== 'player' || !gameStarted || waitingForColorSelection) return;
+            
+            const card = playerHand[cardIndex];
+            
+            // Periksa apakah kartu bisa dimainkan
+            if (!canPlayCard(card)) {
+                addLogMessage(`Kartu ${getCardName(card)} tidak bisa dimainkan!`);
+                return;
+            }
+            
+            // Untuk kartu wild, minta pemilih warna
+            if (card.color === 'black') {
+                showColorSelector(card, cardIndex);
+                return;
+            }
+            
+            // Mainkan kartu
+            actuallyPlayCard(card, cardIndex);
+        }
+
+        // Memeriksa apakah kartu bisa dimainkan
+        function canPlayCard(card) {
+            // Kartu wild selalu bisa dimainkan
+            if (card.color === 'black') {
+                // Untuk wild draw four, hanya bisa dimainkan jika tidak ada kartu lain yang cocok
+                if (card.value === 'wild-draw-four') {
+                    return !playerHand.some(c => c.color !== 'black' && (c.color === currentColor || c.value === currentValue));
+                }
+                return true;
+            }
+            
+            // Kartu biasa harus cocok warna atau nilai
+            return card.color === currentColor || card.value === currentValue;
+        }
+
+        // Menampilkan pemilih warna untuk kartu wild
+        function showColorSelector(card, cardIndex) {
+            waitingForColorSelection = true;
+            colorSelector.style.display = 'flex';
+            
+            // Hapus event listener sebelumnya
+            const colorButtons = document.querySelectorAll('.color-button');
+            colorButtons.forEach(button => {
+                const newButton = button.cloneNode(true);
+                button.parentNode.replaceChild(newButton, button);
+            });
+            
+            // Tambahkan event listener baru
+            document.querySelectorAll('.color-button').forEach(button => {
+                button.addEventListener('click', () => {
+                    const selectedColor = button.dataset.color;
+                    card.tempColor = selectedColor; // Simpan warna sementara
+                    actuallyPlayCard(card, cardIndex);
+                    colorSelector.style.display = 'none';
+                    waitingForColorSelection = false;
+                });
+            });
+        }
+
+        // Benar-benar memainkan kartu
+        function actuallyPlayCard(card, cardIndex) {
+            // Hapus kartu dari tangan pemain
+            playerHand.splice(cardIndex, 1);
+            
+            // Untuk kartu wild, update warna
+            if (card.color === 'black' && card.tempColor) {
+                currentColor = card.tempColor;
+            } else if (card.color !== 'black') {
+                currentColor = card.color;
+            }
+            
+            currentValue = card.value;
+            
+            // Tambahkan ke discard pile
+            discardPile.push(card);
+            
+            // Reset status UNO
+            unoPressed = false;
+            
+            // Terapkan efek kartu
+            applyCardEffect(card);
+            
+            // Update UI
+            updateUI();
+            
+            // Periksa kemenangan
+            if (playerHand.length === 0) {
+                endGame('player');
+                return;
+            }
+            
+            // Jika tidak ada efek khusus, ganti giliran
+            if (!skipActive && !drawTwoActive && !drawFourActive) {
+                switchTurn();
+            } else {
+                // Jika ada efek, tetap di giliran yang sama untuk pemain
+                if (currentPlayer === 'player' && (drawTwoActive || drawFourActive)) {
+                    // Pemain tetap bermain setelah memainkan draw-two atau wild-draw-four
+                    addLogMessage(`Anda tetap bermain setelah memainkan ${getCardName(card)}`);
+                } else {
+                    switchTurn();
+                }
+            }
+            
+            // Jika giliran lawan, biarkan bot bermain
+            if (currentPlayer === 'opponent') {
+                setTimeout(opponentPlay, 1000);
+            }
+        }
+
+        // Menerapkan efek kartu
+        function applyCardEffect(card) {
+            addLogMessage(`Anda memainkan: ${getCardName(card)}`);
+            
+            // Reset efek sebelumnya
+            skipActive = false;
+            drawTwoActive = false;
+            drawFourActive = false;
+            
+            // Terapkan efek berdasarkan jenis kartu
+            switch (card.value) {
+                case 'skip':
+                    skipActive = true;
+                    addLogMessage('Giliran lawan dilewati!');
+                    break;
+                case 'reverse':
+                    // Untuk 2 pemain, reverse sama dengan skip
+                    skipActive = true;
+                    addLogMessage('Arah permainan dibalik! (Efek: skip)');
+                    break;
+                case 'draw-two':
+                    drawTwoActive = true;
+                    addLogMessage('Lawan harus mengambil 2 kartu!');
+                    // Lawan mengambil 2 kartu
+                    for (let i = 0; i < 2; i++) {
+                        opponentHand.push(drawCard());
+                    }
+                    break;
+                case 'wild-draw-four':
+                    drawFourActive = true;
+                    addLogMessage('Lawan harus mengambil 4 kartu!');
+                    // Lawan mengambil 4 kartu
+                    for (let i = 0; i < 4; i++) {
+                        opponentHand.push(drawCard());
+                    }
+                    break;
+            }
+        }
+
+        // Mengganti giliran
+        function switchTurn() {
+            currentPlayer = currentPlayer === 'player' ? 'opponent' : 'player';
+            updateUI();
+        }
+
+        // Mengambil kartu dari deck
+        function drawCard() {
+            if (deck.length === 0) {
+                // Jika deck kosong, buat deck baru dari discard pile (kecuali kartu teratas)
+                const topCard = discardPile.pop();
+                deck = [...discardPile];
+                discardPile = [topCard];
+                shuffleDeck();
+                addLogMessage('Deck dikocok ulang!');
+            }
+            
+            return deck.pop();
+        }
+
+        // Bot memainkan kartu
+        function opponentPlay() {
+            if (currentPlayer !== 'opponent' || !gameStarted) return;
+            
+            // Cari kartu yang bisa dimainkan
+            let playableCardIndex = -1;
+            let playableCard = null;
+            
+            for (let i = 0; i < opponentHand.length; i++) {
+                const card = opponentHand[i];
+                if (canPlayCard(card)) {
+                    // Prioritaskan kartu biasa daripada wild
+                    if (card.color !== 'black') {
+                        playableCardIndex = i;
+                        playableCard = card;
+                        break;
+                    } else if (playableCardIndex === -1) {
+                        playableCardIndex = i;
+                        playableCard = card;
+                    }
+                }
+            }
+            
+            // Jika ada kartu yang bisa dimainkan, mainkan
+            if (playableCardIndex !== -1 && playableCard) {
+                const card = playableCard;
+                
+                // Untuk kartu wild, pilih warna yang paling banyak dimiliki
+                if (card.color === 'black') {
+                    const colorCount = {};
+                    COLORS.forEach(color => colorCount[color] = 0);
+                    
+                    opponentHand.forEach(c => {
+                        if (c.color !== 'black') {
+                            colorCount[c.color]++;
+                        }
+                    });
+                    
+                    let maxColor = COLORS[0];
+                    COLORS.forEach(color => {
+                        if (colorCount[color] > colorCount[maxColor]) {
+                            maxColor = color;
+                        }
+                    });
+                    
+                    currentColor = maxColor;
+                } else {
+                    currentColor = card.color;
+                }
+                
+                currentValue = card.value;
+                
+                // Mainkan kartu
+                opponentHand.splice(playableCardIndex, 1);
+                discardPile.push(card);
+                
+                addLogMessage(`Bot memainkan: ${getCardName(card)}`);
+                
+                // Terapkan efek kartu
+                applyCardEffect(card);
+                
+                // Update UI
+                updateUI();
+                
+                // Periksa kemenangan
+                if (opponentHand.length === 0) {
+                    endGame('opponent');
+                    return;
+                }
+                
+                // Jika tidak ada efek khusus, ganti giliran
+                if (!skipActive && !drawTwoActive && !drawFourActive) {
+                    switchTurn();
+                } else {
+                    // Jika ada efek, bot tetap bermain
+                    setTimeout(opponentPlay, 1000);
+                }
+            } else {
+                // Jika tidak ada kartu yang bisa dimainkan, ambil kartu
+                const drawnCard = drawCard();
+                opponentHand.push(drawnCard);
+                addLogMessage(`Bot mengambil 1 kartu.`);
+                
+                // Periksa apakah kartu yang diambil bisa dimainkan
+                if (canPlayCard(drawnCard)) {
+                    // Mainkan kartu yang diambil
+                    const card = drawnCard;
+                    
+                    if (card.color === 'black') {
+                        const colorCount = {};
+                        COLORS.forEach(color => colorCount[color] = 0);
+                        
+                        opponentHand.forEach(c => {
+                            if (c.color !== 'black') {
+                                colorCount[c.color]++;
+                            }
+                        });
+                        
+                        let maxColor = COLORS[0];
+                        COLORS.forEach(color => {
+                            if (colorCount[color] > colorCount[maxColor]) {
+                                maxColor = color;
+                            }
+                        });
+                        
+                        currentColor = maxColor;
+                    } else {
+                        currentColor = card.color;
+                    }
+                    
+                    currentValue = card.value;
+                    
+                    // Hapus kartu yang baru diambil dari tangan bot
+                    const drawnCardIndex = opponentHand.indexOf(drawnCard);
+                    opponentHand.splice(drawnCardIndex, 1);
+                    discardPile.push(card);
+                    
+                    addLogMessage(`Bot memainkan kartu yang diambil: ${getCardName(card)}`);
+                    
+                    // Terapkan efek kartu
+                    applyCardEffect(card);
+                    
+                    // Update UI
+                    updateUI();
+                    
+                    // Periksa kemenangan
+                    if (opponentHand.length === 0) {
+                        endGame('opponent');
+                        return;
+                    }
+                    
+                    // Jika tidak ada efek khusus, ganti giliran
+                    if (!skipActive && !drawTwoActive && !drawFourActive) {
+                        switchTurn();
+                    } else {
+                        // Jika ada efek, bot tetap bermain
+                        setTimeout(opponentPlay, 1000);
+                    }
+                } else {
+                    // Jika tidak bisa memainkan kartu yang diambil, ganti giliran
+                    switchTurn();
+                }
+            }
+            
+            // Update UI
+            updateUI();
+        }
+
+        // Memulai timer UNO
+        function startUnoTimer() {
+            clearTimeout(unoTimeout);
+            unoTimeout = setTimeout(() => {
+                if (playerHand.length === 1 && !unoPressed) {
+                    addLogMessage('Anda lupa menekan UNO! +2 kartu penalti.');
+                    playerHand.push(drawCard());
+                    playerHand.push(drawCard());
+                    updateUI();
+                }
+            }, 5000);
+        }
+
+        // Tombol UNO ditekan
+        unoButton.addEventListener('click', () => {
+            if (playerHand.length === 1 && !unoPressed) {
+                unoPressed = true;
+                addLogMessage('UNO!');
+                unoButton.disabled = true;
+                clearTimeout(unoTimeout);
+            }
+        });
+
+        // Mengambil kartu dari deck
+        deckElement.addEventListener('click', () => {
+            if (currentPlayer === 'player' && gameStarted && !waitingForColorSelection) {
+                const drawnCard = drawCard();
+                playerHand.push(drawnCard);
+                addLogMessage(`Anda mengambil 1 kartu.`);
+                
+                // Periksa apakah kartu yang diambil bisa dimainkan
+                if (canPlayCard(drawnCard)) {
+                    addLogMessage(`Kartu ${getCardName(drawnCard)} bisa dimainkan!`);
+                } else {
+                    // Jika tidak bisa memainkan kartu yang diambil, ganti giliran
+                    switchTurn();
+                    setTimeout(opponentPlay, 1000);
+                }
+                
+                updateUI();
+            }
+        });
+
+        // Mendapatkan nama kartu untuk ditampilkan
+        function getCardName(card) {
+            let colorName = '';
+            switch (card.color) {
+                case 'red': colorName = 'Merah'; break;
+                case 'blue': colorName = 'Biru'; break;
+                case 'green': colorName = 'Hijau'; break;
+                case 'yellow': colorName = 'Kuning'; break;
+                case 'black': colorName = 'Hitam'; break;
+            }
+            
+            let valueName = '';
+            switch (card.value) {
+                case 'skip': valueName = 'Skip'; break;
+                case 'reverse': valueName = 'Reverse'; break;
+                case 'draw-two': valueName = 'Draw Two'; break;
+                case 'wild': valueName = 'Wild'; break;
+                case 'wild-draw-four': valueName = 'Wild Draw Four'; break;
+                default: valueName = card.value;
+            }
+            
+            return `${colorName} ${valueName}`;
+        }
+
+        // Menambahkan pesan ke log
+        function addLogMessage(message) {
+            const messageElement = document.createElement('p');
+            messageElement.textContent = message;
+            logMessages.appendChild(messageElement);
+            logMessages.scrollTop = logMessages.scrollHeight;
+        }
+
+        // Memasang taruhan
+        placeBetButton.addEventListener('click', () => {
+            const betAmount = parseInt(betAmountInput.value);
+            
+            if (isNaN(betAmount) || betAmount < 100 || betAmount > balance) {
+                alert(`Taruhan harus antara $100 dan $${balance}`);
+                return;
+            }
+            
+            currentBet = betAmount;
+            balance -= betAmount;
+            updateUI();
+            
+            addLogMessage(`Anda memasang taruhan $${betAmount}`);
+            initGame();
+        });
+
+        // Mengakhiri permainan
+        function endGame(winner) {
+            gameStarted = false;
+            
+            if (winner === 'player') {
+                balance += currentBet * 2;
+                addLogMessage(`Selamat! Anda menang! Saldo bertambah $${currentBet * 2}`);
+                gameOverMessage.textContent = `Selamat! Anda menang! Saldo Anda sekarang: $${balance}`;
+            } else {
+                addLogMessage(`Anda kalah! Bot menang. Saldo berkurang $${currentBet}`);
+                gameOverMessage.textContent = `Anda kalah! Saldo Anda sekarang: $${balance}`;
+            }
+            
+            // Periksa apakah saldo habis
+            if (balance <= 0) {
+                gameOverMessage.textContent = 'Game Over! Saldo Anda telah habis.';
+            }
+            
+            gameOverScreen.classList.remove('hidden');
+        }
+
+        // Tombol restart
+        restartButton.addEventListener('click', () => {
+            if (balance <= 0) {
+                balance = 5000;
+            }
+            
+            currentBet = 0;
+            gameOverScreen.classList.add('hidden');
+            bettingSection.style.display = 'flex';
+            gameArea.style.display = 'none';
+            currentColorElement.style.display = 'none';
+            
+            // Reset log
+            logMessages.innerHTML = '<p>Selamat datang di permainan UNO! Pasang taruhan untuk memulai.</p>';
+            
+            updateUI();
+        });
+
+        // Inisialisasi UI
+        updateUI();
+    </script>
+</body>
+</html>
